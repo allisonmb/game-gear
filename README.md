@@ -52,7 +52,7 @@ IC3 - Main RAM
 
 ## In progress
 Sound Chip
-Back Baord Schematic/PCB
+Back Board Schematic/PCB
 LCD Screen
 
 ## Not started
@@ -72,3 +72,5 @@ Cartridge
 ## Known Bugs
 ### IC3 - Main RAM
 Possible timing issue due to the difference of some values in the read/write cycle for the replacement RAM. These values are: output hold from address change, chip selection to output in low z, write recovery time, and output active from end of write. This is unlikely to cause problems since the replacement RAM is faster and the difference is small (5ns).
+### FPGA HDL Flashing
+Synthesis and routing on FPGAs can often be a bit finnicky, especially depending on the pipeline being used. Thus, there is the potential that issues arise when our results are translated to the OrangeCrab board with a Lattice FPGA. Similarly, the pinout is different for Lattice and many of these files (A-Z80) were intended for Intel FPGAs, so we may have to do some tweaking to reconfigure it. Similarly, Quartus cannot be used for the Lattice FPGAs, and as a result for OrangeCrab we need to use the Open Source FPGA toolchain with Yosys and NextPnR. We expect that issues will arise when we transfer things over to the actual FPGA for our final product.
