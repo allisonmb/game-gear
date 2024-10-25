@@ -75,6 +75,8 @@ Cartridge
 Possible timing issue due to the difference of some values in the read/write cycle for the replacement RAM. These values are: output hold from address change, chip selection to output in low z, write recovery time, and output active from end of write. This is unlikely to cause problems since the replacement RAM is faster and the difference is small (5ns).
 ### FPGA HDL Flashing
 Synthesis and routing on FPGAs can often be a bit finnicky, especially depending on the pipeline being used. Thus, there is the potential that issues arise when our results are translated to the OrangeCrab board with a Lattice FPGA. Similarly, the pinout is different for Lattice and many of these files (A-Z80) were intended for Intel FPGAs, so we may have to do some tweaking to reconfigure it. Similarly, Quartus cannot be used for the Lattice FPGAs, and as a result for OrangeCrab we need to use the Open Source FPGA toolchain with Yosys and NextPnR. We expect that issues will arise when we transfer things over to the actual FPGA for our final product.
+### Sound Chip Imperfections
+Currently, the waves produced by our emulated sound chip are perfect and ideal square waves. However, in the real world this is likely not the case. As a result, for optimal recreation of the original hardware, we should try to emulate this imperfection somehow. For instance, making jumps slightly more progressive (add some delay time) rather than instantaneous or shifting the offsets of our signals.
 
 ## References
 [1]  Sega, "Sega Service Manual Game Gear VA1," December 1993. [Online]. Available: https://gamesx.com/wiki/lib/exe/fetch.php?    media=schematics:service_manual_-_game_gear_va1.pdf. [Accessed 24 October 2024].
