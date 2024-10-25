@@ -44,9 +44,9 @@ The game gear contains two dials for brightness and volume. They are connected t
 #### Plug in connections
 At the top of the console there is a headphone jack, gear-to-gear cable input, and power jack input. The headphone jack is a standard aux plug which will output sound to any device connected to it [1]. The gear-to-gear input is used to connect two game gears together to play multiplayer games [7]. The power jack input is used power the console with a cable wall adapter instead of with the batteries.
 
-![alt text](https://github.com/allisonmb/game-gear/blob/main/README%20Images/Inputs.PNG) [1]
+![alt text](https://github.com/allisonmb/game-gear/blob/main/README%20Images/Inputs.PNG) 
 
-Figure 5: All inputs for the game gear
+Figure 5: All inputs for the game gear [1]
 
 ## Completed components
 IC3 - Main RAM
