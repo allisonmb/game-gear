@@ -78,9 +78,15 @@ Synthesis and routing on FPGAs can often be a bit finnicky, especially depending
 
 ## References
 [1]  Sega, "Sega Service Manual Game Gear VA1," December 1993. [Online]. Available: https://gamesx.com/wiki/lib/exe/fetch.php?    media=schematics:service_manual_-_game_gear_va1.pdf. [Accessed 24 October 2024].
+
 [2]  Major Brands, "HM62256 Series," [Online]. Available: https://www.jameco.com/Jameco/Products/ProdDS/42850.pdf. [Accessed 24 October 2024].
+
 [3]  J. Lewis (2023) "bit-preserve" (Version 1.0) [Souce code]. https://github.com/baldengineer/bit-preserve/tree/main/Sega/Game%20Gear.
+
 [4]  G. O’Brien, "DIY SEGA Game Gear 512Kb Flash Cartridge," October 2010. [Online]. Available: https://www.smspower.org/uploads/Development/DIY_SEGA_Game_Gear_512Kb_Flash_Cartridge.pdf. [Accessed 25 October 2024].
+
 [5] Luke from RetroSix, "VA0/VA1 LCD Interface (Game Gear)," Retrosix, 16 December 2023. [Online]. Available: https://www.retrosix.wiki/va0va1-lcd-interface-game-gear. [Accessed 25 October 2024].
+
 [6] "Sega Master System/Technical specifications," Sega Retro, [Online]. Available: https://segaretro.org/Sega_Master_System/Technical_specifications. [Accessed 23 October 2024].
+
 [7] "Gear-to-Gear Cable," Sega Retro, [Online]. Available: https://segaretro.org/Gear-to-Gear_Cable. [Accessed 25 October 2024].
