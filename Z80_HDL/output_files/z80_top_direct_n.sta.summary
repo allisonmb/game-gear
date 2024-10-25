@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLK'
+Slack : -34.980
+TNS   : -6876.109
+
+Type  : Slow 1200mV 85C Model Hold 'CLK'
+Slack : 0.363
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'CLK'
+Slack : -4.475
+TNS   : -206.493
+
+Type  : Slow 1200mV 85C Model Recovery 'nNMI'
+Slack : -1.470
+TNS   : -1.470
+
+Type  : Slow 1200mV 85C Model Removal 'CLK'
+Slack : 1.039
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'nNMI'
+Slack : 1.623
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -544.268
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'nNMI'
+Slack : -3.000
+TNS   : -4.487
+
+Type  : Slow 1200mV 0C Model Setup 'CLK'
+Slack : -33.251
+TNS   : -6517.353
+
+Type  : Slow 1200mV 0C Model Hold 'CLK'
+Slack : 0.324
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'CLK'
+Slack : -4.240
+TNS   : -192.837
+
+Type  : Slow 1200mV 0C Model Recovery 'nNMI'
+Slack : -1.418
+TNS   : -1.418
+
+Type  : Slow 1200mV 0C Model Removal 'CLK'
+Slack : 0.959
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'nNMI'
+Slack : 1.549
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -544.268
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'nNMI'
+Slack : -3.000
+TNS   : -4.487
+
+Type  : Fast 1200mV 0C Model Setup 'CLK'
+Slack : -13.824
+TNS   : -2672.852
+
+Type  : Fast 1200mV 0C Model Hold 'CLK'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'CLK'
+Slack : -1.508
+TNS   : -51.598
+
+Type  : Fast 1200mV 0C Model Recovery 'nNMI'
+Slack : -0.187
+TNS   : -0.187
+
+Type  : Fast 1200mV 0C Model Removal 'CLK'
+Slack : 0.435
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'nNMI'
+Slack : 0.727
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -380.860
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'nNMI'
+Slack : -3.000
+TNS   : -4.145
+
+------------------------------------------------------------

@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at z80_top_direct_n.v(32): object "nRESET" differs only in case from object "nreset" in the same scope File: K:/Documents/Design1/Z80_Quartus/z80_top_direct_n.v Line: 32
+Info (10281): Verilog HDL Declaration information at z80_top_direct_n.v(35): object "CLK" differs only in case from object "clk" in the same scope File: K:/Documents/Design1/Z80_Quartus/z80_top_direct_n.v Line: 35

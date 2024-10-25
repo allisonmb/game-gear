@@ -1,0 +1,161 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "nM1",
+					"strict" : false
+				},
+				{
+					"name" : "nMREQ",
+					"strict" : false
+				},
+				{
+					"name" : "nIORQ",
+					"strict" : false
+				},
+				{
+					"name" : "nRD",
+					"strict" : false
+				},
+				{
+					"name" : "nWR",
+					"strict" : false
+				},
+				{
+					"name" : "nRFSH",
+					"strict" : false
+				},
+				{
+					"name" : "nHALT",
+					"strict" : false
+				},
+				{
+					"name" : "nBUSACK",
+					"strict" : false
+				},
+				{
+					"name" : "A[0]",
+					"strict" : false
+				},
+				{
+					"name" : "A[1]",
+					"strict" : false
+				},
+				{
+					"name" : "A[2]",
+					"strict" : false
+				},
+				{
+					"name" : "A[3]",
+					"strict" : false
+				},
+				{
+					"name" : "A[4]",
+					"strict" : false
+				},
+				{
+					"name" : "A[5]",
+					"strict" : false
+				},
+				{
+					"name" : "A[6]",
+					"strict" : false
+				},
+				{
+					"name" : "A[7]",
+					"strict" : false
+				},
+				{
+					"name" : "A[8]",
+					"strict" : false
+				},
+				{
+					"name" : "A[9]",
+					"strict" : false
+				},
+				{
+					"name" : "A[10]",
+					"strict" : false
+				},
+				{
+					"name" : "A[11]",
+					"strict" : false
+				},
+				{
+					"name" : "A[12]",
+					"strict" : false
+				},
+				{
+					"name" : "A[13]",
+					"strict" : false
+				},
+				{
+					"name" : "A[14]",
+					"strict" : false
+				},
+				{
+					"name" : "A[15]",
+					"strict" : false
+				},
+				{
+					"name" : "D[0]",
+					"strict" : false
+				},
+				{
+					"name" : "D[1]",
+					"strict" : false
+				},
+				{
+					"name" : "D[2]",
+					"strict" : false
+				},
+				{
+					"name" : "D[3]",
+					"strict" : false
+				},
+				{
+					"name" : "D[4]",
+					"strict" : false
+				},
+				{
+					"name" : "D[5]",
+					"strict" : false
+				},
+				{
+					"name" : "D[6]",
+					"strict" : false
+				},
+				{
+					"name" : "D[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "nBUSRQ",
+					"strict" : false
+				},
+				{
+					"name" : "nWAIT",
+					"strict" : false
+				},
+				{
+					"name" : "nRESET",
+					"strict" : false
+				},
+				{
+					"name" : "nNMI",
+					"strict" : false
+				},
+				{
+					"name" : "nINT",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

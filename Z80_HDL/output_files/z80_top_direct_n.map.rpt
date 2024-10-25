@@ -1,0 +1,669 @@
+Analysis & Synthesis report for z80_top_direct_n
+Fri Oct 25 17:41:16 2024
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "alu:alu_"
+ 12. Port Connectivity Checks: "alu_flags:alu_flags_|alu_mux_4:b2v_inst_mux_cf2"
+ 13. Port Connectivity Checks: "alu_control:alu_control_|alu_mux_8:b2v_inst_shift_mux"
+ 14. Port Connectivity Checks: "memory_ifc:memory_ifc_"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+ 18. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Oct 25 17:41:15 2024       ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                      ; z80_top_direct_n                            ;
+; Top-level Entity Name              ; z80_top_direct_n                            ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 1,964                                       ;
+;     Total combinational functions  ; 1,750                                       ;
+;     Dedicated logic registers      ; 365                                         ;
+; Total registers                    ; 365                                         ;
+; Total pins                         ; 38                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M02SCU169C8G     ;                    ;
+; Top-level entity name                                            ; z80_top_direct_n   ; z80_top_direct_n   ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.2%      ;
+;     Processor 3            ;   0.2%      ;
+;     Processor 4            ;   0.2%      ;
+;     Processor 5            ;   0.2%      ;
+;     Processor 6            ;   0.1%      ;
+;     Processor 7            ;   0.1%      ;
+;     Processor 8            ;   0.1%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                             ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
+; temp_wires.vh                    ; yes             ; User Unspecified File  ; K:/Documents/Design1/Z80_Quartus/temp_wires.vh           ;         ;
+; globals.vh                       ; yes             ; User Unspecified File  ; K:/Documents/Design1/Z80_Quartus/globals.vh              ;         ;
+; exec_zero.vh                     ; yes             ; User Unspecified File  ; K:/Documents/Design1/Z80_Quartus/exec_zero.vh            ;         ;
+; exec_module.vh                   ; yes             ; User Unspecified File  ; K:/Documents/Design1/Z80_Quartus/exec_module.vh          ;         ;
+; exec_matrix_compiled.vh          ; yes             ; User Unspecified File  ; K:/Documents/Design1/Z80_Quartus/exec_matrix_compiled.vh ;         ;
+; coremodules.vh                   ; yes             ; User Unspecified File  ; K:/Documents/Design1/Z80_Quartus/coremodules.vh          ;         ;
+; core.vh                          ; yes             ; User Unspecified File  ; K:/Documents/Design1/Z80_Quartus/core.vh                 ;         ;
+; z80_top_direct_n.v               ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/z80_top_direct_n.v      ;         ;
+; sequencer.v                      ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/sequencer.v             ;         ;
+; resets.v                         ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/resets.v                ;         ;
+; reg_latch.v                      ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/reg_latch.v             ;         ;
+; reg_file.v                       ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/reg_file.v              ;         ;
+; reg_control.v                    ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/reg_control.v           ;         ;
+; pla_decode.v                     ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/pla_decode.v            ;         ;
+; pin_control.v                    ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/pin_control.v           ;         ;
+; memory_ifc.v                     ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/memory_ifc.v            ;         ;
+; ir.v                             ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/ir.v                    ;         ;
+; interrupts.v                     ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/interrupts.v            ;         ;
+; inc_dec_2bit.v                   ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/inc_dec_2bit.v          ;         ;
+; inc_dec.v                        ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/inc_dec.v               ;         ;
+; execute.v                        ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/execute.v               ;         ;
+; decode_state.v                   ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/decode_state.v          ;         ;
+; data_switch_mask.v               ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/data_switch_mask.v      ;         ;
+; data_switch.v                    ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/data_switch.v           ;         ;
+; data_pins.v                      ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/data_pins.v             ;         ;
+; control_pins_n.v                 ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/control_pins_n.v        ;         ;
+; clk_delay.v                      ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/clk_delay.v             ;         ;
+; bus_switch.v                     ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/bus_switch.v            ;         ;
+; bus_control.v                    ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/bus_control.v           ;         ;
+; alu_slice.v                      ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/alu_slice.v             ;         ;
+; alu_shifter_core.v               ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/alu_shifter_core.v      ;         ;
+; alu_select.v                     ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/alu_select.v            ;         ;
+; alu_prep_daa.v                   ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/alu_prep_daa.v          ;         ;
+; alu_mux_8.v                      ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/alu_mux_8.v             ;         ;
+; alu_mux_4.v                      ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/alu_mux_4.v             ;         ;
+; alu_mux_3z.v                     ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/alu_mux_3z.v            ;         ;
+; alu_mux_2z.v                     ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/alu_mux_2z.v            ;         ;
+; alu_mux_2.v                      ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/alu_mux_2.v             ;         ;
+; alu_flags.v                      ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/alu_flags.v             ;         ;
+; alu_core.v                       ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/alu_core.v              ;         ;
+; alu_control.v                    ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/alu_control.v           ;         ;
+; alu_bit_select.v                 ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/alu_bit_select.v        ;         ;
+; alu.v                            ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/alu.v                   ;         ;
+; address_pins.v                   ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/address_pins.v          ;         ;
+; address_mux.v                    ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/address_mux.v           ;         ;
+; address_latch.v                  ; yes             ; User Verilog HDL File  ; K:/Documents/Design1/Z80_Quartus/address_latch.v         ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 1,964     ;
+;                                             ;           ;
+; Total combinational functions               ; 1750      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 1385      ;
+;     -- 3 input functions                    ; 267       ;
+;     -- <=2 input functions                  ; 98        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 1750      ;
+;     -- arithmetic mode                      ; 0         ;
+;                                             ;           ;
+; Total registers                             ; 365       ;
+;     -- Dedicated logic registers            ; 365       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 38        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 364       ;
+; Total fan-out                               ; 7814      ;
+; Average fan-out                             ; 3.55      ;
++---------------------------------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                         ;
++---------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                    ; Entity Name      ; Library Name ;
++---------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------+------------------+--------------+
+; |z80_top_direct_n                           ; 1750 (2)            ; 365 (1)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 38   ; 0            ; 0          ; |z80_top_direct_n                                                                                      ; z80_top_direct_n ; work         ;
+;    |address_latch:address_latch_|           ; 62 (29)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|address_latch:address_latch_                                                         ; address_latch    ; work         ;
+;       |inc_dec:b2v_inst_inc_dec|            ; 33 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|address_latch:address_latch_|inc_dec:b2v_inst_inc_dec                                ; inc_dec          ; work         ;
+;          |inc_dec_2bit:b2v_dual_adder_0|    ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|address_latch:address_latch_|inc_dec:b2v_inst_inc_dec|inc_dec_2bit:b2v_dual_adder_0  ; inc_dec_2bit     ; work         ;
+;          |inc_dec_2bit:b2v_dual_adder_10|   ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|address_latch:address_latch_|inc_dec:b2v_inst_inc_dec|inc_dec_2bit:b2v_dual_adder_10 ; inc_dec_2bit     ; work         ;
+;          |inc_dec_2bit:b2v_dual_adder_2|    ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|address_latch:address_latch_|inc_dec:b2v_inst_inc_dec|inc_dec_2bit:b2v_dual_adder_2  ; inc_dec_2bit     ; work         ;
+;          |inc_dec_2bit:b2v_dual_adder_4|    ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|address_latch:address_latch_|inc_dec:b2v_inst_inc_dec|inc_dec_2bit:b2v_dual_adder_4  ; inc_dec_2bit     ; work         ;
+;          |inc_dec_2bit:b2v_dual_adder_7|    ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|address_latch:address_latch_|inc_dec:b2v_inst_inc_dec|inc_dec_2bit:b2v_dual_adder_7  ; inc_dec_2bit     ; work         ;
+;          |inc_dec_2bit:b2v_dual_adder_9|    ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|address_latch:address_latch_|inc_dec:b2v_inst_inc_dec|inc_dec_2bit:b2v_dual_adder_9  ; inc_dec_2bit     ; work         ;
+;    |address_pins:address_pins_|             ; 16 (16)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|address_pins:address_pins_                                                           ; address_pins     ; work         ;
+;    |alu:alu_|                               ; 134 (76)            ; 20 (20)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|alu:alu_                                                                             ; alu              ; work         ;
+;       |alu_bit_select:b2v_input_bit_select| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|alu:alu_|alu_bit_select:b2v_input_bit_select                                         ; alu_bit_select   ; work         ;
+;       |alu_core:b2v_core|                   ; 21 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|alu:alu_|alu_core:b2v_core                                                           ; alu_core         ; work         ;
+;          |alu_slice:b2v_alu_slice_bit_0|    ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|alu:alu_|alu_core:b2v_core|alu_slice:b2v_alu_slice_bit_0                             ; alu_slice        ; work         ;
+;          |alu_slice:b2v_alu_slice_bit_1|    ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|alu:alu_|alu_core:b2v_core|alu_slice:b2v_alu_slice_bit_1                             ; alu_slice        ; work         ;
+;          |alu_slice:b2v_alu_slice_bit_2|    ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|alu:alu_|alu_core:b2v_core|alu_slice:b2v_alu_slice_bit_2                             ; alu_slice        ; work         ;
+;          |alu_slice:b2v_alu_slice_bit_3|    ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|alu:alu_|alu_core:b2v_core|alu_slice:b2v_alu_slice_bit_3                             ; alu_slice        ; work         ;
+;       |alu_mux_2z:b2v_op1_latch_mux_high|   ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|alu:alu_|alu_mux_2z:b2v_op1_latch_mux_high                                           ; alu_mux_2z       ; work         ;
+;       |alu_mux_3z:b2v_op1_latch_mux_low|    ; 12 (12)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|alu:alu_|alu_mux_3z:b2v_op1_latch_mux_low                                            ; alu_mux_3z       ; work         ;
+;       |alu_mux_3z:b2v_op2_latch_mux_high|   ; 10 (10)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|alu:alu_|alu_mux_3z:b2v_op2_latch_mux_high                                           ; alu_mux_3z       ; work         ;
+;       |alu_mux_3z:b2v_op2_latch_mux_low|    ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|alu:alu_|alu_mux_3z:b2v_op2_latch_mux_low                                            ; alu_mux_3z       ; work         ;
+;    |alu_control:alu_control_|               ; 42 (37)             ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|alu_control:alu_control_                                                             ; alu_control      ; work         ;
+;       |alu_mux_4:b2v_inst_cond_mux|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|alu_control:alu_control_|alu_mux_4:b2v_inst_cond_mux                                 ; alu_mux_4        ; work         ;
+;       |alu_mux_8:b2v_inst_shift_mux|        ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|alu_control:alu_control_|alu_mux_8:b2v_inst_shift_mux                                ; alu_mux_8        ; work         ;
+;    |alu_flags:alu_flags_|                   ; 61 (61)             ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|alu_flags:alu_flags_                                                                 ; alu_flags        ; work         ;
+;    |bus_control:bus_control_|               ; 18 (18)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|bus_control:bus_control_                                                             ; bus_control      ; work         ;
+;    |clk_delay:clk_delay_|                   ; 7 (7)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|clk_delay:clk_delay_                                                                 ; clk_delay        ; work         ;
+;    |data_pins:data_pins_|                   ; 9 (9)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|data_pins:data_pins_                                                                 ; data_pins        ; work         ;
+;    |data_switch_mask:sw1_|                  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|data_switch_mask:sw1_                                                                ; data_switch_mask ; work         ;
+;    |decode_state:decode_state_|             ; 12 (12)             ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|decode_state:decode_state_                                                           ; decode_state     ; work         ;
+;    |execute:execute_|                       ; 941 (941)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|execute:execute_                                                                     ; execute          ; work         ;
+;    |interrupts:interrupts_|                 ; 10 (10)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|interrupts:interrupts_                                                               ; interrupts       ; work         ;
+;    |ir:ir_|                                 ; 2 (2)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|ir:ir_                                                                               ; ir               ; work         ;
+;    |memory_ifc:memory_ifc_|                 ; 11 (11)             ; 20 (20)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|memory_ifc:memory_ifc_                                                               ; memory_ifc       ; work         ;
+;    |pin_control:pin_control_|               ; 18 (18)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|pin_control:pin_control_                                                             ; pin_control      ; work         ;
+;    |pla_decode:pla_decode_|                 ; 73 (73)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|pla_decode:pla_decode_                                                               ; pla_decode       ; work         ;
+;    |reg_control:reg_control_|               ; 29 (29)             ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_control:reg_control_                                                             ; reg_control      ; work         ;
+;    |reg_file:reg_file_|                     ; 284 (276)           ; 224 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_                                                                   ; reg_file         ; work         ;
+;       |reg_latch:b2v_latch_af2_hi|          ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_af2_hi                                        ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_af2_lo|          ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_af2_lo                                        ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_af_hi|           ; 6 (6)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_af_hi                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_af_lo|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_af_lo                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_bc2_hi|          ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_bc2_hi                                        ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_bc2_lo|          ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_bc2_lo                                        ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_bc_hi|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_bc_hi                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_bc_lo|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_bc_lo                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_de2_hi|          ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_de2_hi                                        ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_de2_lo|          ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_de2_lo                                        ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_de_hi|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_de_hi                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_de_lo|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_de_lo                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_hl2_hi|          ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_hl2_hi                                        ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_hl2_lo|          ; 1 (1)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_hl2_lo                                        ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_hl_hi|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_hl_hi                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_hl_lo|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_hl_lo                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_ir_hi|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_ir_hi                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_ir_lo|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_ir_lo                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_ix_hi|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_ix_hi                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_ix_lo|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_ix_lo                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_iy_hi|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_iy_hi                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_iy_lo|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_iy_lo                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_pc_hi|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_pc_hi                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_pc_lo|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_pc_lo                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_sp_hi|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_sp_hi                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_sp_lo|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_sp_lo                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_wz_hi|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_wz_hi                                         ; reg_latch        ; work         ;
+;       |reg_latch:b2v_latch_wz_lo|           ; 1 (1)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_wz_lo                                         ; reg_latch        ; work         ;
+;    |resets:resets_|                         ; 5 (5)               ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|resets:resets_                                                                       ; resets           ; work         ;
+;    |sequencer:sequencer_|                   ; 12 (12)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |z80_top_direct_n|sequencer:sequencer_                                                                 ; sequencer        ; work         ;
++---------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 365   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Asynchronous Clear ; 81    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 333   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; resets:resets_|SYNTHESIZED_WIRE_12     ; 81      ;
+; sequencer:sequencer_|DFFE_M1_ff        ; 74      ;
+; sequencer:sequencer_|DFFE_T1_ff        ; 60      ;
+; resets:resets_|x1                      ; 2       ;
+; fpga_reset                             ; 2       ;
+; memory_ifc:memory_ifc_|DFFE_m1_ff1     ; 1       ;
+; Total number of inverted registers = 6 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |z80_top_direct_n|address_pins:address_pins_|DFFE_apin_latch[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:alu_"                                                                                   ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; test_db_high ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; test_db_low  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu_flags:alu_flags_|alu_mux_4:b2v_inst_mux_cf2" ;
++------+-------+----------+---------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                           ;
++------+-------+----------+---------------------------------------------------+
+; in3  ; Input ; Info     ; Stuck at GND                                      ;
++------+-------+----------+---------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu_control:alu_control_|alu_mux_8:b2v_inst_shift_mux" ;
++------+-------+----------+---------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                 ;
++------+-------+----------+---------------------------------------------------------+
+; in6  ; Input ; Info     ; Stuck at VCC                                            ;
++------+-------+----------+---------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "memory_ifc:memory_ifc_"                                                                ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; wait_m1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 38                          ;
+; cycloneiii_ff         ; 365                         ;
+;     CLR               ; 24                          ;
+;     ENA               ; 260                         ;
+;     ENA CLR           ; 57                          ;
+;     ENA SLD           ; 16                          ;
+;     plain             ; 8                           ;
+; cycloneiii_io_obuf    ; 28                          ;
+; cycloneiii_lcell_comb ; 1753                        ;
+;     normal            ; 1753                        ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 95                          ;
+;         3 data inputs ; 267                         ;
+;         4 data inputs ; 1385                        ;
+;                       ;                             ;
+; Max LUT depth         ; 21.00                       ;
+; Average LUT depth     ; 12.92                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:08     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Fri Oct 25 17:41:01 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off A-Z80 -c z80_top_direct_n
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file z80_top_direct_n.v
+    Info (12023): Found entity 1: z80_top_direct_n File: K:/Documents/Design1/Z80_Quartus/z80_top_direct_n.v Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file sequencer.v
+    Info (12023): Found entity 1: sequencer File: K:/Documents/Design1/Z80_Quartus/sequencer.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file resets.v
+    Info (12023): Found entity 1: resets File: K:/Documents/Design1/Z80_Quartus/resets.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file reg_latch.v
+    Info (12023): Found entity 1: reg_latch File: K:/Documents/Design1/Z80_Quartus/reg_latch.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file reg_file.v
+    Info (12023): Found entity 1: reg_file File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file reg_control.v
+    Info (12023): Found entity 1: reg_control File: K:/Documents/Design1/Z80_Quartus/reg_control.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file pla_decode.v
+    Info (12023): Found entity 1: pla_decode File: K:/Documents/Design1/Z80_Quartus/pla_decode.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file pin_control.v
+    Info (12023): Found entity 1: pin_control File: K:/Documents/Design1/Z80_Quartus/pin_control.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file memory_ifc.v
+    Info (12023): Found entity 1: memory_ifc File: K:/Documents/Design1/Z80_Quartus/memory_ifc.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file ir.v
+    Info (12023): Found entity 1: ir File: K:/Documents/Design1/Z80_Quartus/ir.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file interrupts.v
+    Info (12023): Found entity 1: interrupts File: K:/Documents/Design1/Z80_Quartus/interrupts.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file inc_dec_2bit.v
+    Info (12023): Found entity 1: inc_dec_2bit File: K:/Documents/Design1/Z80_Quartus/inc_dec_2bit.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file inc_dec.v
+    Info (12023): Found entity 1: inc_dec File: K:/Documents/Design1/Z80_Quartus/inc_dec.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file execute.v
+    Info (12023): Found entity 1: execute File: K:/Documents/Design1/Z80_Quartus/execute.v Line: 38
+Info (12021): Found 1 design units, including 1 entities, in source file decode_state.v
+    Info (12023): Found entity 1: decode_state File: K:/Documents/Design1/Z80_Quartus/decode_state.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file data_switch_mask.v
+    Info (12023): Found entity 1: data_switch_mask File: K:/Documents/Design1/Z80_Quartus/data_switch_mask.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file data_switch.v
+    Info (12023): Found entity 1: data_switch File: K:/Documents/Design1/Z80_Quartus/data_switch.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file data_pins.v
+    Info (12023): Found entity 1: data_pins File: K:/Documents/Design1/Z80_Quartus/data_pins.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file control_pins_n.v
+    Info (12023): Found entity 1: control_pins_n File: K:/Documents/Design1/Z80_Quartus/control_pins_n.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file clk_delay.v
+    Info (12023): Found entity 1: clk_delay File: K:/Documents/Design1/Z80_Quartus/clk_delay.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file bus_switch.v
+    Info (12023): Found entity 1: bus_switch File: K:/Documents/Design1/Z80_Quartus/bus_switch.v Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file bus_control.v
+    Info (12023): Found entity 1: bus_control File: K:/Documents/Design1/Z80_Quartus/bus_control.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file alu_slice.v
+    Info (12023): Found entity 1: alu_slice File: K:/Documents/Design1/Z80_Quartus/alu_slice.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file alu_shifter_core.v
+    Info (12023): Found entity 1: alu_shifter_core File: K:/Documents/Design1/Z80_Quartus/alu_shifter_core.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file alu_select.v
+    Info (12023): Found entity 1: alu_select File: K:/Documents/Design1/Z80_Quartus/alu_select.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file alu_prep_daa.v
+    Info (12023): Found entity 1: alu_prep_daa File: K:/Documents/Design1/Z80_Quartus/alu_prep_daa.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file alu_mux_8.v
+    Info (12023): Found entity 1: alu_mux_8 File: K:/Documents/Design1/Z80_Quartus/alu_mux_8.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file alu_mux_4.v
+    Info (12023): Found entity 1: alu_mux_4 File: K:/Documents/Design1/Z80_Quartus/alu_mux_4.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file alu_mux_3z.v
+    Info (12023): Found entity 1: alu_mux_3z File: K:/Documents/Design1/Z80_Quartus/alu_mux_3z.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file alu_mux_2z.v
+    Info (12023): Found entity 1: alu_mux_2z File: K:/Documents/Design1/Z80_Quartus/alu_mux_2z.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file alu_mux_2.v
+    Info (12023): Found entity 1: alu_mux_2 File: K:/Documents/Design1/Z80_Quartus/alu_mux_2.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file alu_flags.v
+    Info (12023): Found entity 1: alu_flags File: K:/Documents/Design1/Z80_Quartus/alu_flags.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file alu_core.v
+    Info (12023): Found entity 1: alu_core File: K:/Documents/Design1/Z80_Quartus/alu_core.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file alu_control.v
+    Info (12023): Found entity 1: alu_control File: K:/Documents/Design1/Z80_Quartus/alu_control.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file alu_bit_select.v
+    Info (12023): Found entity 1: alu_bit_select File: K:/Documents/Design1/Z80_Quartus/alu_bit_select.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: alu File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file address_pins.v
+    Info (12023): Found entity 1: address_pins File: K:/Documents/Design1/Z80_Quartus/address_pins.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file address_mux.v
+    Info (12023): Found entity 1: address_mux File: K:/Documents/Design1/Z80_Quartus/address_mux.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file address_latch.v
+    Info (12023): Found entity 1: address_latch File: K:/Documents/Design1/Z80_Quartus/address_latch.v Line: 32
+Info (12127): Elaborating entity "z80_top_direct_n" for the top level hierarchy
+Info (12128): Elaborating entity "clk_delay" for hierarchy "clk_delay:clk_delay_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 33
+Info (12128): Elaborating entity "decode_state" for hierarchy "decode_state:decode_state_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 59
+Info (12128): Elaborating entity "execute" for hierarchy "execute:execute_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 193
+Info (12128): Elaborating entity "interrupts" for hierarchy "interrupts:interrupts_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 212
+Info (12128): Elaborating entity "ir" for hierarchy "ir:ir_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 221
+Info (12128): Elaborating entity "pin_control" for hierarchy "pin_control:pin_control_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 236
+Info (12128): Elaborating entity "pla_decode" for hierarchy "pla_decode:pla_decode_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 242
+Info (12128): Elaborating entity "resets" for hierarchy "resets:resets_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 253
+Info (12128): Elaborating entity "memory_ifc" for hierarchy "memory_ifc:memory_ifc_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 277
+Info (12128): Elaborating entity "sequencer" for hierarchy "sequencer:sequencer_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 299
+Info (12128): Elaborating entity "alu_control" for hierarchy "alu_control:alu_control_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 339
+Info (12128): Elaborating entity "alu_mux_4" for hierarchy "alu_control:alu_control_|alu_mux_4:b2v_inst_cond_mux" File: K:/Documents/Design1/Z80_Quartus/alu_control.v Line: 218
+Info (12128): Elaborating entity "alu_mux_8" for hierarchy "alu_control:alu_control_|alu_mux_8:b2v_inst_shift_mux" File: K:/Documents/Design1/Z80_Quartus/alu_control.v Line: 240
+Info (12128): Elaborating entity "alu_select" for hierarchy "alu_select:alu_select_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 376
+Info (12128): Elaborating entity "alu_flags" for hierarchy "alu_flags:alu_flags_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 418
+Info (12128): Elaborating entity "alu_mux_2" for hierarchy "alu_flags:alu_flags_|alu_mux_2:b2v_inst_mux_cf" File: K:/Documents/Design1/Z80_Quartus/alu_flags.v Line: 357
+Info (12128): Elaborating entity "alu" for hierarchy "alu:alu_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 461
+Info (12128): Elaborating entity "alu_core" for hierarchy "alu:alu_|alu_core:b2v_core" File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 183
+Info (12128): Elaborating entity "alu_slice" for hierarchy "alu:alu_|alu_core:b2v_core|alu_slice:b2v_alu_slice_bit_0" File: K:/Documents/Design1/Z80_Quartus/alu_core.v Line: 74
+Info (12128): Elaborating entity "alu_bit_select" for hierarchy "alu:alu_|alu_bit_select:b2v_input_bit_select" File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 199
+Info (12128): Elaborating entity "alu_shifter_core" for hierarchy "alu:alu_|alu_shifter_core:b2v_input_shift" File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 210
+Info (12128): Elaborating entity "alu_mux_2z" for hierarchy "alu:alu_|alu_mux_2z:b2v_op1_latch_mux_high" File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 331
+Info (12128): Elaborating entity "alu_mux_3z" for hierarchy "alu:alu_|alu_mux_3z:b2v_op1_latch_mux_low" File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 341
+Info (12128): Elaborating entity "alu_prep_daa" for hierarchy "alu:alu_|alu_prep_daa:b2v_prep_daa" File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 377
+Info (12128): Elaborating entity "reg_file" for hierarchy "reg_file:reg_file_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 497
+Info (12128): Elaborating entity "reg_latch" for hierarchy "reg_file:reg_file_|reg_latch:b2v_latch_af2_hi" File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 292
+Info (12128): Elaborating entity "reg_control" for hierarchy "reg_control:reg_control_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 544
+Info (12128): Elaborating entity "address_latch" for hierarchy "address_latch:address_latch_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 560
+Info (12128): Elaborating entity "address_mux" for hierarchy "address_latch:address_latch_|address_mux:b2v_inst7" File: K:/Documents/Design1/Z80_Quartus/address_latch.v Line: 119
+Info (12128): Elaborating entity "inc_dec" for hierarchy "address_latch:address_latch_|inc_dec:b2v_inst_inc_dec" File: K:/Documents/Design1/Z80_Quartus/address_latch.v Line: 129
+Info (12128): Elaborating entity "inc_dec_2bit" for hierarchy "address_latch:address_latch_|inc_dec:b2v_inst_inc_dec|inc_dec_2bit:b2v_dual_adder_0" File: K:/Documents/Design1/Z80_Quartus/inc_dec.v Line: 93
+Info (12128): Elaborating entity "bus_control" for hierarchy "bus_control:bus_control_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 566
+Info (12128): Elaborating entity "bus_switch" for hierarchy "bus_switch:bus_switch_" File: K:/Documents/Design1/Z80_Quartus/coremodules.vh Line: 579
+Info (12128): Elaborating entity "data_switch" for hierarchy "data_switch:sw2_" File: K:/Documents/Design1/Z80_Quartus/core.vh Line: 49
+Info (12128): Elaborating entity "data_switch_mask" for hierarchy "data_switch_mask:sw1_" File: K:/Documents/Design1/Z80_Quartus/core.vh Line: 52
+Info (12128): Elaborating entity "address_pins" for hierarchy "address_pins:address_pins_" File: K:/Documents/Design1/Z80_Quartus/z80_top_direct_n.v Line: 54
+Info (12128): Elaborating entity "data_pins" for hierarchy "data_pins:data_pins_" File: K:/Documents/Design1/Z80_Quartus/z80_top_direct_n.v Line: 64
+Info (12128): Elaborating entity "control_pins_n" for hierarchy "control_pins_n:control_pins_" File: K:/Documents/Design1/Z80_Quartus/z80_top_direct_n.v Line: 96
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "bus_control:bus_control_|db[0]" to the node "ir:ir_|opcode[0]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/bus_control.v Line: 41
+    Warning (13047): Converted the fan-out from the tri-state buffer "bus_control:bus_control_|db[7]" to the node "ir:ir_|opcode[7]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/bus_control.v Line: 41
+    Warning (13047): Converted the fan-out from the tri-state buffer "bus_control:bus_control_|db[6]" to the node "ir:ir_|opcode[6]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/bus_control.v Line: 41
+    Warning (13047): Converted the fan-out from the tri-state buffer "bus_control:bus_control_|db[2]" to the node "ir:ir_|opcode[2]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/bus_control.v Line: 41
+    Warning (13047): Converted the fan-out from the tri-state buffer "bus_control:bus_control_|db[1]" to the node "ir:ir_|opcode[1]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/bus_control.v Line: 41
+    Warning (13047): Converted the fan-out from the tri-state buffer "bus_control:bus_control_|db[5]" to the node "alu:alu_|alu_bit_select:b2v_input_bit_select|bs_out_high[0]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/bus_control.v Line: 41
+    Warning (13047): Converted the fan-out from the tri-state buffer "bus_control:bus_control_|db[4]" to the node "alu:alu_|alu_bit_select:b2v_input_bit_select|bs_out_high_ALTERA_SYNTHESIZED" into an OR gate File: K:/Documents/Design1/Z80_Quartus/bus_control.v Line: 41
+    Warning (13047): Converted the fan-out from the tri-state buffer "bus_control:bus_control_|db[3]" to the node "alu:alu_|alu_bit_select:b2v_input_bit_select|bs_out_high_ALTERA_SYNTHESIZED" into an OR gate File: K:/Documents/Design1/Z80_Quartus/bus_control.v Line: 41
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu:alu_|db_high[3]" to the node "alu_flags:alu_flags_|SYNTHESIZED_WIRE_1" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 119
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu:alu_|db_high[2]" to the node "alu:alu_|alu_mux_3z:b2v_op1_latch_mux_low|SYNTHESIZED_WIRE_2[2]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 119
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu:alu_|db_high[1]" to the node "alu_flags:alu_flags_|SYNTHESIZED_WIRE_13" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 119
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu:alu_|db_high[0]" to the node "alu:alu_|alu_mux_3z:b2v_op1_latch_mux_low|SYNTHESIZED_WIRE_2[0]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 119
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu:alu_|db_low[3]" to the node "alu_flags:alu_flags_|SYNTHESIZED_WIRE_17" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 120
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu:alu_|db_low[2]" to the node "alu:alu_|alu_mux_3z:b2v_op1_latch_mux_low|SYNTHESIZED_WIRE_3[2]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 120
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu:alu_|db_low[1]" to the node "alu:alu_|alu_mux_3z:b2v_op1_latch_mux_low|SYNTHESIZED_WIRE_3[1]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 120
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu:alu_|db_low[0]" to the node "alu:alu_|alu_mux_3z:b2v_op1_latch_mux_low|SYNTHESIZED_WIRE_3[0]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 120
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu_control:alu_control_|db[6]" to the node "alu_flags:alu_flags_|SYNTHESIZED_WIRE_12" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu_control.v Line: 109
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu:alu_|db[7]" to the node "alu_control:alu_control_|alu_mux_8:b2v_inst_shift_mux|out" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 113
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu:alu_|db[0]" to the node "alu_control:alu_control_|shift_cf_out" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 113
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|db_lo_as[0]" to the node "address_latch:address_latch_|abusz[0]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 100
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|db_lo_as[1]" to the node "address_latch:address_latch_|abusz[1]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 100
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|db_lo_as[2]" to the node "address_latch:address_latch_|abusz[2]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 100
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|db_lo_as[3]" to the node "address_latch:address_latch_|abusz[3]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 100
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|db_lo_as[4]" to the node "address_latch:address_latch_|abusz[4]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 100
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|db_lo_as[5]" to the node "address_latch:address_latch_|abusz[5]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 100
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|db_lo_as[6]" to the node "address_latch:address_latch_|abusz[6]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 100
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|db_lo_as[7]" to the node "address_latch:address_latch_|abusz[7]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 100
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|db_hi_as[0]" to the node "address_latch:address_latch_|abusz[8]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 98
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|db_hi_as[1]" to the node "address_latch:address_latch_|abusz[9]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 98
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|db_hi_as[2]" to the node "address_latch:address_latch_|abusz[10]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 98
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|db_hi_as[3]" to the node "address_latch:address_latch_|abusz[11]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 98
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|db_hi_as[4]" to the node "address_latch:address_latch_|abusz[12]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 98
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|db_hi_as[5]" to the node "address_latch:address_latch_|abusz[13]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 98
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|db_hi_as[6]" to the node "address_latch:address_latch_|abusz[14]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 98
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|db_hi_as[7]" to the node "address_latch:address_latch_|abusz[15]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 98
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu_control:alu_control_|db[0]" to the node "alu_flags:alu_flags_|SYNTHESIZED_WIRE_22" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu_control.v Line: 109
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu_control:alu_control_|db[7]" to the node "alu_flags:alu_flags_|SYNTHESIZED_WIRE_10" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu_control.v Line: 109
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu_control:alu_control_|db[2]" to the node "alu_flags:alu_flags_|SYNTHESIZED_WIRE_20" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu_control.v Line: 109
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu_control:alu_control_|db[1]" to the node "alu_flags:alu_flags_|SYNTHESIZED_WIRE_2" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu_control.v Line: 109
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu_control:alu_control_|db[5]" to the node "alu_flags:alu_flags_|SYNTHESIZED_WIRE_14" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu_control.v Line: 109
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu_control:alu_control_|db[4]" to the node "alu_flags:alu_flags_|SYNTHESIZED_WIRE_16" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu_control.v Line: 109
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu_control:alu_control_|db[3]" to the node "alu_flags:alu_flags_|SYNTHESIZED_WIRE_18" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu_control.v Line: 109
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu:alu_|db[6]" to the node "alu:alu_|alu_shifter_core:b2v_input_shift|out_high[3]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 113
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu:alu_|db[5]" to the node "alu:alu_|alu_shifter_core:b2v_input_shift|out_high[2]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 113
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu:alu_|db[4]" to the node "alu:alu_|alu_shifter_core:b2v_input_shift|out_high[1]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 113
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu:alu_|db[3]" to the node "alu:alu_|alu_shifter_core:b2v_input_shift|out_high[0]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 113
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu:alu_|db[2]" to the node "alu:alu_|alu_shifter_core:b2v_input_shift|out_low[3]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 113
+    Warning (13047): Converted the fan-out from the tri-state buffer "alu:alu_|db[1]" to the node "alu:alu_|alu_shifter_core:b2v_input_shift|out_low[2]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/alu.v Line: 113
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|gdfx_temp0[6]" to the node "reg_file:reg_file_|reg_latch:b2v_latch_af2_lo|latch[6]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 103
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|gdfx_temp1[7]" to the node "reg_file:reg_file_|reg_latch:b2v_latch_af2_hi|latch[7]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 104
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|gdfx_temp1[0]" to the node "reg_file:reg_file_|reg_latch:b2v_latch_af2_hi|latch[0]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 104
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|gdfx_temp0[0]" to the node "reg_file:reg_file_|reg_latch:b2v_latch_af2_lo|latch[0]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 103
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|gdfx_temp0[1]" to the node "reg_file:reg_file_|reg_latch:b2v_latch_af2_lo|latch[1]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 103
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|gdfx_temp0[2]" to the node "reg_file:reg_file_|reg_latch:b2v_latch_af2_lo|latch[2]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 103
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|gdfx_temp0[3]" to the node "reg_file:reg_file_|reg_latch:b2v_latch_af2_lo|latch[3]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 103
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|gdfx_temp0[4]" to the node "reg_file:reg_file_|reg_latch:b2v_latch_af2_lo|latch[4]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 103
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|gdfx_temp0[5]" to the node "reg_file:reg_file_|reg_latch:b2v_latch_af2_lo|latch[5]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 103
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|gdfx_temp0[7]" to the node "reg_file:reg_file_|reg_latch:b2v_latch_af2_lo|latch[7]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 103
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|gdfx_temp1[1]" to the node "reg_file:reg_file_|reg_latch:b2v_latch_af2_hi|latch[1]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 104
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|gdfx_temp1[2]" to the node "reg_file:reg_file_|reg_latch:b2v_latch_af2_hi|latch[2]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 104
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|gdfx_temp1[3]" to the node "reg_file:reg_file_|reg_latch:b2v_latch_af2_hi|latch[3]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 104
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|gdfx_temp1[4]" to the node "reg_file:reg_file_|reg_latch:b2v_latch_af2_hi|latch[4]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 104
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|gdfx_temp1[5]" to the node "reg_file:reg_file_|reg_latch:b2v_latch_af2_hi|latch[5]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 104
+    Warning (13047): Converted the fan-out from the tri-state buffer "reg_file:reg_file_|gdfx_temp1[6]" to the node "reg_file:reg_file_|reg_latch:b2v_latch_af2_hi|latch[6]" into an OR gate File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 104
+Info (13000): Registers with preset signals will power-up high File: K:/Documents/Design1/Z80_Quartus/resets.v Line: 65
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file K:/Documents/Design1/Z80_Quartus/output_files/z80_top_direct_n.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 2063 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 24 output pins
+    Info (21060): Implemented 8 bidirectional pins
+    Info (21061): Implemented 2025 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 66 warnings
+    Info: Peak virtual memory: 4859 megabytes
+    Info: Processing ended: Fri Oct 25 17:41:16 2024
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:24
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in K:/Documents/Design1/Z80_Quartus/output_files/z80_top_direct_n.map.smsg.
+
+

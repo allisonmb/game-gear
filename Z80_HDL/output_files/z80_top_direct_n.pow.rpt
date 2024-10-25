@@ -1,0 +1,885 @@
+Power Analyzer report for z80_top_direct_n
+Fri Oct 25 17:41:53 2024
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Parallel Compilation
+  3. Power Analyzer Summary
+  4. Power Analyzer Settings
+  5. Indeterminate Toggle Rates
+  6. Operating Conditions Used
+  7. Thermal Power Dissipation by Block
+  8. Thermal Power Dissipation by Block Type
+  9. Thermal Power Dissipation by Hierarchy
+ 10. Core Dynamic Thermal Power Dissipation by Clock Domain
+ 11. Current Drawn from Voltage Supplies Summary
+ 12. VCCIO Supply Current Drawn by I/O Bank
+ 13. VCCIO Supply Current Drawn by Voltage
+ 14. Confidence Metric Details
+ 15. Signal Activities
+ 16. Power Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.75        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;  10.7%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Power Analyzer Summary                                                                    ;
++----------------------------------------+--------------------------------------------------+
+; Power Analyzer Status                  ; Successful - Fri Oct 25 17:41:53 2024            ;
+; Quartus Prime Version                  ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition      ;
+; Revision Name                          ; z80_top_direct_n                                 ;
+; Top-level Entity Name                  ; z80_top_direct_n                                 ;
+; Family                                 ; MAX 10                                           ;
+; Device                                 ; 10M02SCU169C8G                                   ;
+; Power Models                           ; Final                                            ;
+; Total Thermal Power Dissipation        ; 72.34 mW                                         ;
+; Core Dynamic Thermal Power Dissipation ; 0.00 mW                                          ;
+; Core Static Thermal Power Dissipation  ; 66.77 mW                                         ;
+; I/O Thermal Power Dissipation          ; 5.57 mW                                          ;
+; Power Estimation Confidence            ; Low: user provided insufficient toggle rate data ;
++----------------------------------------+--------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Power Analyzer Settings                                                                                                  ;
++------------------------------------------------------------------+---------------------------------------+---------------+
+; Option                                                           ; Setting                               ; Default Value ;
++------------------------------------------------------------------+---------------------------------------+---------------+
+; Use smart compilation                                            ; Off                                   ; Off           ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                                    ; On            ;
+; Enable compact report table                                      ; Off                                   ; Off           ;
+; Default Power Input I/O Toggle Rate                              ; 12.5%                                 ; 12.5%         ;
+; Preset Cooling Solution                                          ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ;               ;
+; Board thermal model                                              ; None (CONSERVATIVE)                   ;               ;
+; Default Power Toggle Rate                                        ; 12.5%                                 ; 12.5%         ;
+; Use vectorless estimation                                        ; On                                    ; On            ;
+; Use Input Files                                                  ; Off                                   ; Off           ;
+; Filter Glitches in VCD File Reader                               ; On                                    ; On            ;
+; Power Analyzer Report Signal Activity                            ; Off                                   ; Off           ;
+; Power Analyzer Report Power Dissipation                          ; Off                                   ; Off           ;
+; Device Power Characteristics                                     ; TYPICAL                               ; TYPICAL       ;
+; Automatically Compute Junction Temperature                       ; On                                    ; On            ;
+; Specified Junction Temperature                                   ; 25                                    ; 25            ;
+; Ambient Temperature                                              ; 25                                    ; 25            ;
+; Use Custom Cooling Solution                                      ; Off                                   ; Off           ;
+; Board Temperature                                                ; 25                                    ; 25            ;
++------------------------------------------------------------------+---------------------------------------+---------------+
+
+
++------------------------------------------------+
+; Indeterminate Toggle Rates                     ;
++------------------+-----------------------------+
+; Node             ; Reason                      ;
++------------------+-----------------------------+
+; D[0]             ; No valid clock domain found ;
+; D[1]             ; No valid clock domain found ;
+; D[2]             ; No valid clock domain found ;
+; D[3]             ; No valid clock domain found ;
+; D[4]             ; No valid clock domain found ;
+; D[5]             ; No valid clock domain found ;
+; D[6]             ; No valid clock domain found ;
+; D[7]             ; No valid clock domain found ;
+; CLK              ; No valid clock domain found ;
+; nBUSRQ           ; No valid clock domain found ;
+; nWAIT            ; No valid clock domain found ;
+; nRESET           ; No valid clock domain found ;
+; nNMI             ; No valid clock domain found ;
+; nINT             ; No valid clock domain found ;
+; CLK~inputclkctrl ; No valid clock domain found ;
++------------------+-----------------------------+
+
+
++--------------------------------------------------------------------------+
+; Operating Conditions Used                                                ;
++---------------------------------------------+----------------------------+
+; Setting                                     ; Value                      ;
++---------------------------------------------+----------------------------+
+; Device power characteristics                ; Typical                    ;
+;                                             ;                            ;
+; Voltages                                    ;                            ;
+;     VCCA                                    ; 3.00 V                     ;
+;     VCC_ONE                                 ; 3.00 V                     ;
+;     2.5 V I/O Standard                      ; 2.5 V                      ;
+;     2.5 V Schmitt Trigger I/O Standard      ; 2.5 V                      ;
+;                                             ;                            ;
+; Auto computed junction temperature          ; 26.8 degrees Celsius       ;
+;     Ambient temperature                     ; 25.0 degrees Celsius       ;
+;     Junction-to-Case thermal resistance     ; 16.00 degrees Celsius/Watt ;
+;     Case-to-Heat Sink thermal resistance    ; 0.10 degrees Celsius/Watt  ;
+;     Heat Sink-to-Ambient thermal resistance ; 8.20 degrees Celsius/Watt  ;
+;                                             ;                            ;
+; Board model used                            ; None                       ;
++---------------------------------------------+----------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Thermal Power Dissipation by Block                                                                                                           ;
++------------+------------+---------------------+-----------------------------+--------------------------------+-------------------------------+
+; Block Name ; Block Type ; Total Thermal Power ; Block Thermal Dynamic Power ; Block Thermal Static Power (1) ; Routing Thermal Dynamic Power ;
++------------+------------+---------------------+-----------------------------+--------------------------------+-------------------------------+
+(1) The "Thermal Power Dissipation by Block" Table has been hidden. To show this table, please select the "Write power dissipation by block to report file" option under "PowerPlay Power Analyzer Settings".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Thermal Power Dissipation by Block Type                                                                                                                                                                           ;
++--------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
+; Block Type         ; Total Thermal Power by Block Type ; Block Thermal Dynamic Power ; Block Thermal Static Power (1) ; Routing Thermal Dynamic Power ; Block Average Toggle Rate (millions of transitions / sec) ;
++--------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
+; Combinational cell ; 0.00 mW                           ; 0.00 mW                     ; --                             ; 0.00 mW                       ;    0.000                                                  ;
+; Register cell      ; 0.00 mW                           ; 0.00 mW                     ; --                             ; 0.00 mW                       ;    0.000                                                  ;
+; I/O                ; 0.16 mW                           ; 0.00 mW                     ; 0.16 mW                        ; 0.00 mW                       ;    0.000                                                  ;
+; Voltage Regulator  ; 0.00 mW                           ; 0.00 mW                     ; 0.00 mW                        ; --                            ; --                                                        ;
++--------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
+(1) The "Block Thermal Static Power" for all block types except Pins and the Voltage Regulator, if one exists, is part of the "Core Static Thermal Power Dissipation" value found on the PowerPlay Power Analyzer-->Summary report panel. The "Core Static Thermal Power Dissipation" also contains the thermal static power dissipated by the routing.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Thermal Power Dissipation by Hierarchy                                                                                                                                                                                                                                                                 ;
++----------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------+
+; Compilation Hierarchy Node                   ; Total Thermal Power by Hierarchy (1) ; Block Thermal Dynamic Power (1) ; Block Thermal Static Power (1)(2) ; Routing Thermal Dynamic Power (1) ; Full Hierarchy Name                                                                                    ;
++----------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------+
+; |z80_top_direct_n                            ; 0.16 mW (0.16 mW)                    ; 0.00 mW (0.00 mW)               ; 0.16 mW (0.16 mW)                 ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n                                                                                      ;
+;     |address_latch:address_latch_            ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|address_latch:address_latch_                                                         ;
+;         |inc_dec:b2v_inst_inc_dec            ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|address_latch:address_latch_|inc_dec:b2v_inst_inc_dec                                ;
+;             |inc_dec_2bit:b2v_dual_adder_0   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|address_latch:address_latch_|inc_dec:b2v_inst_inc_dec|inc_dec_2bit:b2v_dual_adder_0  ;
+;             |inc_dec_2bit:b2v_dual_adder_2   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|address_latch:address_latch_|inc_dec:b2v_inst_inc_dec|inc_dec_2bit:b2v_dual_adder_2  ;
+;             |inc_dec_2bit:b2v_dual_adder_4   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|address_latch:address_latch_|inc_dec:b2v_inst_inc_dec|inc_dec_2bit:b2v_dual_adder_4  ;
+;             |inc_dec_2bit:b2v_dual_adder_7   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|address_latch:address_latch_|inc_dec:b2v_inst_inc_dec|inc_dec_2bit:b2v_dual_adder_7  ;
+;             |inc_dec_2bit:b2v_dual_adder_9   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|address_latch:address_latch_|inc_dec:b2v_inst_inc_dec|inc_dec_2bit:b2v_dual_adder_9  ;
+;             |inc_dec_2bit:b2v_dual_adder_10  ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|address_latch:address_latch_|inc_dec:b2v_inst_inc_dec|inc_dec_2bit:b2v_dual_adder_10 ;
+;     |address_pins:address_pins_              ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|address_pins:address_pins_                                                           ;
+;     |alu:alu_                                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|alu:alu_                                                                             ;
+;         |alu_core:b2v_core                   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|alu:alu_|alu_core:b2v_core                                                           ;
+;             |alu_slice:b2v_alu_slice_bit_0   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|alu:alu_|alu_core:b2v_core|alu_slice:b2v_alu_slice_bit_0                             ;
+;             |alu_slice:b2v_alu_slice_bit_1   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|alu:alu_|alu_core:b2v_core|alu_slice:b2v_alu_slice_bit_1                             ;
+;             |alu_slice:b2v_alu_slice_bit_2   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|alu:alu_|alu_core:b2v_core|alu_slice:b2v_alu_slice_bit_2                             ;
+;             |alu_slice:b2v_alu_slice_bit_3   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|alu:alu_|alu_core:b2v_core|alu_slice:b2v_alu_slice_bit_3                             ;
+;         |alu_bit_select:b2v_input_bit_select ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|alu:alu_|alu_bit_select:b2v_input_bit_select                                         ;
+;         |alu_mux_2z:b2v_op1_latch_mux_high   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|alu:alu_|alu_mux_2z:b2v_op1_latch_mux_high                                           ;
+;         |alu_mux_3z:b2v_op1_latch_mux_low    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|alu:alu_|alu_mux_3z:b2v_op1_latch_mux_low                                            ;
+;         |alu_mux_3z:b2v_op2_latch_mux_high   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|alu:alu_|alu_mux_3z:b2v_op2_latch_mux_high                                           ;
+;         |alu_mux_3z:b2v_op2_latch_mux_low    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|alu:alu_|alu_mux_3z:b2v_op2_latch_mux_low                                            ;
+;     |alu_control:alu_control_                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|alu_control:alu_control_                                                             ;
+;         |alu_mux_4:b2v_inst_cond_mux         ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|alu_control:alu_control_|alu_mux_4:b2v_inst_cond_mux                                 ;
+;         |alu_mux_8:b2v_inst_shift_mux        ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|alu_control:alu_control_|alu_mux_8:b2v_inst_shift_mux                                ;
+;     |alu_flags:alu_flags_                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|alu_flags:alu_flags_                                                                 ;
+;     |hard_block:auto_generated_inst          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|hard_block:auto_generated_inst                                                       ;
+;     |bus_control:bus_control_                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|bus_control:bus_control_                                                             ;
+;     |clk_delay:clk_delay_                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|clk_delay:clk_delay_                                                                 ;
+;     |data_pins:data_pins_                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|data_pins:data_pins_                                                                 ;
+;     |decode_state:decode_state_              ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|decode_state:decode_state_                                                           ;
+;     |execute:execute_                        ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|execute:execute_                                                                     ;
+;     |interrupts:interrupts_                  ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|interrupts:interrupts_                                                               ;
+;     |ir:ir_                                  ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|ir:ir_                                                                               ;
+;     |memory_ifc:memory_ifc_                  ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|memory_ifc:memory_ifc_                                                               ;
+;     |pin_control:pin_control_                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|pin_control:pin_control_                                                             ;
+;     |pla_decode:pla_decode_                  ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|pla_decode:pla_decode_                                                               ;
+;     |reg_control:reg_control_                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_control:reg_control_                                                             ;
+;     |reg_file:reg_file_                      ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_                                                                   ;
+;         |reg_latch:b2v_latch_af2_hi          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_af2_hi                                        ;
+;         |reg_latch:b2v_latch_af2_lo          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_af2_lo                                        ;
+;         |reg_latch:b2v_latch_af_hi           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_af_hi                                         ;
+;         |reg_latch:b2v_latch_af_lo           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_af_lo                                         ;
+;         |reg_latch:b2v_latch_bc2_hi          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_bc2_hi                                        ;
+;         |reg_latch:b2v_latch_bc2_lo          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_bc2_lo                                        ;
+;         |reg_latch:b2v_latch_bc_hi           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_bc_hi                                         ;
+;         |reg_latch:b2v_latch_bc_lo           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_bc_lo                                         ;
+;         |reg_latch:b2v_latch_de2_hi          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_de2_hi                                        ;
+;         |reg_latch:b2v_latch_de2_lo          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_de2_lo                                        ;
+;         |reg_latch:b2v_latch_de_hi           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_de_hi                                         ;
+;         |reg_latch:b2v_latch_de_lo           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_de_lo                                         ;
+;         |reg_latch:b2v_latch_hl2_hi          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_hl2_hi                                        ;
+;         |reg_latch:b2v_latch_hl2_lo          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_hl2_lo                                        ;
+;         |reg_latch:b2v_latch_hl_hi           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_hl_hi                                         ;
+;         |reg_latch:b2v_latch_hl_lo           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_hl_lo                                         ;
+;         |reg_latch:b2v_latch_ir_hi           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_ir_hi                                         ;
+;         |reg_latch:b2v_latch_ir_lo           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_ir_lo                                         ;
+;         |reg_latch:b2v_latch_ix_hi           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_ix_hi                                         ;
+;         |reg_latch:b2v_latch_ix_lo           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_ix_lo                                         ;
+;         |reg_latch:b2v_latch_iy_hi           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_iy_hi                                         ;
+;         |reg_latch:b2v_latch_iy_lo           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_iy_lo                                         ;
+;         |reg_latch:b2v_latch_pc_hi           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_pc_hi                                         ;
+;         |reg_latch:b2v_latch_pc_lo           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_pc_lo                                         ;
+;         |reg_latch:b2v_latch_sp_hi           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_sp_hi                                         ;
+;         |reg_latch:b2v_latch_sp_lo           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_sp_lo                                         ;
+;         |reg_latch:b2v_latch_wz_hi           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_wz_hi                                         ;
+;         |reg_latch:b2v_latch_wz_lo           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|reg_file:reg_file_|reg_latch:b2v_latch_wz_lo                                         ;
+;     |resets:resets_                          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|resets:resets_                                                                       ;
+;     |sequencer:sequencer_                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|sequencer:sequencer_                                                                 ;
+;     |data_switch_mask:sw1_                   ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |z80_top_direct_n|data_switch_mask:sw1_                                                                ;
++----------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------+
+(1) Value in parentheses is the power consumed at that level of hierarchy. Value not in parentheses is the power consumed at that level of hierarchy plus the power consumed by all levels of hierarchy below it.
+
+(2) The "Block Thermal Static Power" for all levels of hierarchy except the top-level hierarchy is part of the "Core Static Thermal Power Dissipation" value found on the PowerPlay Power Analyzer-->Summary report panel. The "Core Static Thermal Power Dissipation" also contains the thermal static power dissipated by the routing.
+
+
++--------------------------------------------------------------------+
+; Core Dynamic Thermal Power Dissipation by Clock Domain             ;
++-----------------+-----------------------+--------------------------+
+; Clock Domain    ; Clock Frequency (MHz) ; Total Core Dynamic Power ;
++-----------------+-----------------------+--------------------------+
+; No clock domain ; 0.00                  ; 0.00                     ;
++-----------------+-----------------------+--------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Current Drawn from Voltage Supplies Summary                                                                                        ;
++----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; Voltage Supply ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
++----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; VCCIO          ; 2.26 mA                 ; 0.00 mA                   ; 2.26 mA                  ; 2.26 mA                          ;
+; VCCA           ; 0.00 mA                 ; 0.00 mA                   ; 0.00 mA                  ; 0.00 mA                          ;
+; VCC_ONE        ; 22.26 mA                ; 0.00 mA                   ; 22.26 mA                 ; 22.26 mA                         ;
++----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+(1) Currents reported in columns "Total Current Drawn", "Dynamic Current Drawn", and "Static Current Drawn" are sufficient for user operation of the device.  
+(2) Currents reported in column "Minimum Power Supply Current" are sufficient for power-up, configuration, and user operation of the device.
+
+
++-----------------------------------------------------------------------------------------------+
+; VCCIO Supply Current Drawn by I/O Bank                                                        ;
++----------+---------------+---------------------+-----------------------+----------------------+
+; I/O Bank ; VCCIO Voltage ; Total Current Drawn ; Dynamic Current Drawn ; Static Current Drawn ;
++----------+---------------+---------------------+-----------------------+----------------------+
+; 1A       ; 2.5V          ; 0.31 mA             ; 0.00 mA               ; 0.31 mA              ;
+; 1B       ; 2.5V          ; 0.33 mA             ; 0.00 mA               ; 0.33 mA              ;
+; 2        ; 2.5V          ; 0.32 mA             ; 0.00 mA               ; 0.32 mA              ;
+; 3        ; 2.5V          ; 0.33 mA             ; 0.00 mA               ; 0.33 mA              ;
+; 5        ; 2.5V          ; 0.34 mA             ; 0.00 mA               ; 0.34 mA              ;
+; 6        ; 2.5V          ; 0.32 mA             ; 0.00 mA               ; 0.32 mA              ;
+; 8        ; 2.5V          ; 0.32 mA             ; 0.00 mA               ; 0.32 mA              ;
++----------+---------------+---------------------+-----------------------+----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; VCCIO Supply Current Drawn by Voltage                                                                                             ;
++---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; VCCIO Voltage ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
++---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; 2.5V          ; 2.26 mA                 ; 0.00 mA                   ; 2.26 mA                  ; 2.26 mA                          ;
++---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+(1) Currents reported in columns "Total Current Drawn", "Dynamic Current Drawn", and "Static Current Drawn" are sufficient for user operation of the device.  
+(2) Currents reported in column "Minimum Power Supply Current" are sufficient for power-up, configuration, and user operation of the device.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Confidence Metric Details                                                                                                                         ;
++----------------------------------------------------------------------------------------+--------------+------------+--------------+---------------+
+; Data Source                                                                            ; Total        ; Pin        ; Registered   ; Combinational ;
++----------------------------------------------------------------------------------------+--------------+------------+--------------+---------------+
+; Simulation (from file)                                                                 ;              ;            ;              ;               ;
+;     -- Number of signals with Toggle Rate from Simulation                              ; 0 (0.0%)     ; 0 (0.0%)   ; 0 (0.0%)     ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Simulation                       ; 0 (0.0%)     ; 0 (0.0%)   ; 0 (0.0%)     ; 0 (0.0%)      ;
+;                                                                                        ;              ;            ;              ;               ;
+; Node, entity or clock assignment                                                       ;              ;            ;              ;               ;
+;     -- Number of signals with Toggle Rate from Node, entity or clock assignment        ; 0 (0.0%)     ; 0 (0.0%)   ; 0 (0.0%)     ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Node, entity or clock assignment ; 1 (0.0%)     ; 0 (0.0%)   ; 0 (0.0%)     ; 1 (0.1%)      ;
+;                                                                                        ;              ;            ;              ;               ;
+; Vectorless estimation                                                                  ;              ;            ;              ;               ;
+;     -- Number of signals with Toggle Rate from Vectorless estimation                   ; 2253 (99.1%) ; 33 (62.3%) ; 365 (100.0%) ; 1855 (100.0%) ;
+;     -- Number of signals with Zero toggle rate, from Vectorless estimation             ; 23 (1.0%)    ; 1 (1.9%)   ; 2 (0.5%)     ; 20 (1.1%)     ;
+;     -- Number of signals with Static Probability from Vectorless estimation            ; 2252 (99.1%) ; 33 (62.3%) ; 365 (100.0%) ; 1854 (99.9%)  ;
+;                                                                                        ;              ;            ;              ;               ;
+; Default assignment                                                                     ;              ;            ;              ;               ;
+;     -- Number of signals with Toggle Rate from Default assignment                      ; 0 (0.0%)     ; 0 (0.0%)   ; 0 (0.0%)     ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Default assignment               ; 20 (0.9%)    ; 20 (37.7%) ; 0 (0.0%)     ; 0 (0.0%)      ;
+;                                                                                        ;              ;            ;              ;               ;
+; Assumed 0                                                                              ;              ;            ;              ;               ;
+;     -- Number of signals with Toggle Rate assumed 0                                    ; 20 (0.9%)    ; 20 (37.7%) ; 0 (0.0%)     ; 0 (0.0%)      ;
++----------------------------------------------------------------------------------------+--------------+------------+--------------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Activities                                                                                                                           ;
++--------+------+---------------------------------------------+-------------------------+--------------------+--------------------------------+
+; Signal ; Type ; Toggle Rate (millions of transitions / sec) ; Toggle Rate Data Source ; Static Probability ; Static Probability Data Source ;
++--------+------+---------------------------------------------+-------------------------+--------------------+--------------------------------+
+(1) The "Signal Activity" Table has been hidden. To show this table, please select the "Write signal activities to report file" option under "PowerPlay Power Analyzer Settings".
+
+
++-------------------------+
+; Power Analyzer Messages ;
++-------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Power Analyzer
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Fri Oct 25 17:41:49 2024
+Info: Command: quartus_pow --read_settings_files=off --write_settings_files=off A-Z80 -c z80_top_direct_n
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'z80_top_direct_n.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Warning (332125): Found combinational loop of 513 nodes File: K:/Documents/Design1/Z80_Quartus/reg_file.v Line: 100
+    Warning (332126): Node "reg_file_|db_lo_as[0]~1|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[0]~19|datab"
+    Warning (332126): Node "reg_file_|db_lo_as[0]~19|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[0]~21|dataa"
+    Warning (332126): Node "reg_file_|gdfx_temp0[0]~21|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[0]~0|datab"
+    Warning (332126): Node "reg_file_|db_lo_as[0]~0|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[0]~1|datad"
+    Warning (332126): Node "alu_control_|db[0]~26|datad"
+    Warning (332126): Node "alu_control_|db[0]~26|combout"
+    Warning (332126): Node "alu_control_|db[0]~27|datad"
+    Warning (332126): Node "alu_control_|db[0]~27|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[0]~10|datab"
+    Warning (332126): Node "reg_file_|gdfx_temp0[0]~10|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[0]~15|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp0[0]~15|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[0]~21|datab"
+    Warning (332126): Node "alu_|db[0]~18|dataa"
+    Warning (332126): Node "alu_|db[0]~18|combout"
+    Warning (332126): Node "alu_control_|db[0]~25|datac"
+    Warning (332126): Node "alu_control_|db[0]~25|combout"
+    Warning (332126): Node "alu_control_|db[0]~26|datab"
+    Warning (332126): Node "reg_file_|gdfx_temp1[0]~12|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp1[0]~12|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[0]~14|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp1[0]~14|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[0]~15|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp1[0]~15|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[0]~21|datab"
+    Warning (332126): Node "reg_file_|gdfx_temp1[0]~21|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[0]~0|datad"
+    Warning (332126): Node "reg_file_|db_hi_as[0]~0|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[0]~1|datad"
+    Warning (332126): Node "reg_file_|db_hi_as[0]~1|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[0]~18|dataa"
+    Warning (332126): Node "reg_file_|db_hi_as[0]~18|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[0]~21|datac"
+    Warning (332126): Node "alu_|db[0]~17|datad"
+    Warning (332126): Node "alu_|db[0]~17|combout"
+    Warning (332126): Node "alu_|db[0]~18|datac"
+    Warning (332126): Node "alu_control_|b2v_inst_shift_mux|out~1|dataa"
+    Warning (332126): Node "alu_control_|b2v_inst_shift_mux|out~1|combout"
+    Warning (332126): Node "alu_control_|b2v_inst_shift_mux|out~2|datad"
+    Warning (332126): Node "alu_control_|b2v_inst_shift_mux|out~2|combout"
+    Warning (332126): Node "alu_|db_high[3]~20|datac"
+    Warning (332126): Node "alu_|db_high[3]~20|combout"
+    Warning (332126): Node "alu_|db_high[3]~21|datad"
+    Warning (332126): Node "alu_|db_high[3]~21|combout"
+    Warning (332126): Node "alu_|db_high[3]~24|datab"
+    Warning (332126): Node "alu_|db_high[3]~24|combout"
+    Warning (332126): Node "alu_|db_high[3]~25|dataa"
+    Warning (332126): Node "alu_|db_high[3]~25|combout"
+    Warning (332126): Node "alu_|db[7]~20|dataa"
+    Warning (332126): Node "alu_|db[7]~20|combout"
+    Warning (332126): Node "alu_control_|db[7]~11|datac"
+    Warning (332126): Node "alu_control_|db[7]~11|combout"
+    Warning (332126): Node "alu_control_|db[7]~13|datad"
+    Warning (332126): Node "alu_control_|db[7]~13|combout"
+    Warning (332126): Node "alu_|db[7]~19|datac"
+    Warning (332126): Node "alu_|db[7]~19|combout"
+    Warning (332126): Node "alu_|db[7]~20|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp0[7]~87|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp0[7]~87|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[7]~88|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp0[7]~88|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[7]~89|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp0[7]~89|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[7]~90|datab"
+    Warning (332126): Node "reg_file_|gdfx_temp0[7]~90|combout"
+    Warning (332126): Node "reg_file_|db_lo_ds[7]~0|datad"
+    Warning (332126): Node "reg_file_|db_lo_ds[7]~0|combout"
+    Warning (332126): Node "alu_control_|db[7]~12|dataa"
+    Warning (332126): Node "alu_control_|db[7]~12|combout"
+    Warning (332126): Node "alu_control_|db[7]~13|datac"
+    Warning (332126): Node "reg_file_|db_lo_as[7]~16|datab"
+    Warning (332126): Node "reg_file_|db_lo_as[7]~16|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[7]~17|datad"
+    Warning (332126): Node "reg_file_|db_lo_as[7]~17|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[7]~18|datac"
+    Warning (332126): Node "reg_file_|db_lo_as[7]~18|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[7]~90|dataa"
+    Warning (332126): Node "bus_control_|db[7]~5|datad"
+    Warning (332126): Node "bus_control_|db[7]~5|combout"
+    Warning (332126): Node "bus_control_|db[7]~7|datad"
+    Warning (332126): Node "bus_control_|db[7]~7|combout"
+    Warning (332126): Node "alu_control_|db[7]~12|datac"
+    Warning (332126): Node "alu_|db_high[3]~21|datab"
+    Warning (332126): Node "alu_|db_high[2]~2|datad"
+    Warning (332126): Node "alu_|db_high[2]~2|combout"
+    Warning (332126): Node "alu_|db_high[2]~3|datac"
+    Warning (332126): Node "alu_|db_high[2]~3|combout"
+    Warning (332126): Node "alu_|db_high[2]~6|datac"
+    Warning (332126): Node "alu_|db_high[2]~6|combout"
+    Warning (332126): Node "alu_|db_high[2]~7|datac"
+    Warning (332126): Node "alu_|db_high[2]~7|combout"
+    Warning (332126): Node "alu_|db[6]~24|dataa"
+    Warning (332126): Node "alu_|db[6]~24|combout"
+    Warning (332126): Node "alu_|db_high[3]~20|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp1[6]~72|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp1[6]~72|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[6]~74|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp1[6]~74|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[6]~75|datab"
+    Warning (332126): Node "reg_file_|gdfx_temp1[6]~75|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[6]~76|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp1[6]~76|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[6]~14|datad"
+    Warning (332126): Node "reg_file_|db_hi_as[6]~14|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[6]~15|datac"
+    Warning (332126): Node "reg_file_|db_hi_as[6]~15|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[6]~23|datac"
+    Warning (332126): Node "reg_file_|db_hi_as[6]~23|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[6]~76|dataa"
+    Warning (332126): Node "alu_|db[6]~23|datac"
+    Warning (332126): Node "alu_|db[6]~23|combout"
+    Warning (332126): Node "alu_|db[6]~24|datac"
+    Warning (332126): Node "alu_control_|db[6]~15|datac"
+    Warning (332126): Node "alu_control_|db[6]~15|combout"
+    Warning (332126): Node "alu_control_|db[6]~16|datad"
+    Warning (332126): Node "alu_control_|db[6]~16|combout"
+    Warning (332126): Node "alu_control_|db[6]~17|dataa"
+    Warning (332126): Node "alu_control_|db[6]~17|combout"
+    Warning (332126): Node "bus_control_|db[6]~8|datad"
+    Warning (332126): Node "bus_control_|db[6]~8|combout"
+    Warning (332126): Node "bus_control_|db[6]~9|datac"
+    Warning (332126): Node "bus_control_|db[6]~9|combout"
+    Warning (332126): Node "alu_control_|db[6]~16|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp0[6]~78|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp0[6]~78|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[6]~79|datab"
+    Warning (332126): Node "reg_file_|gdfx_temp0[6]~79|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[6]~80|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp0[6]~80|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[6]~81|datab"
+    Warning (332126): Node "reg_file_|gdfx_temp0[6]~81|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[6]~14|datab"
+    Warning (332126): Node "reg_file_|db_lo_as[6]~14|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[6]~15|datac"
+    Warning (332126): Node "reg_file_|db_lo_as[6]~15|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[6]~24|datab"
+    Warning (332126): Node "reg_file_|db_lo_as[6]~24|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[6]~81|datad"
+    Warning (332126): Node "alu_control_|db[6]~17|datad"
+    Warning (332126): Node "alu_|db[6]~23|datad"
+    Warning (332126): Node "alu_|db_high[2]~3|datad"
+    Warning (332126): Node "alu_|db_high[1]~8|datad"
+    Warning (332126): Node "alu_|db_high[1]~8|combout"
+    Warning (332126): Node "alu_|db_high[1]~9|datad"
+    Warning (332126): Node "alu_|db_high[1]~9|combout"
+    Warning (332126): Node "alu_|db_high[1]~12|datad"
+    Warning (332126): Node "alu_|db_high[1]~12|combout"
+    Warning (332126): Node "alu_|db_high[1]~13|dataa"
+    Warning (332126): Node "alu_|db_high[1]~13|combout"
+    Warning (332126): Node "alu_|db[5]~22|datac"
+    Warning (332126): Node "alu_|db[5]~22|combout"
+    Warning (332126): Node "alu_control_|db[5]~29|datac"
+    Warning (332126): Node "alu_control_|db[5]~29|combout"
+    Warning (332126): Node "alu_control_|db[5]~30|datac"
+    Warning (332126): Node "alu_control_|db[5]~30|combout"
+    Warning (332126): Node "alu_control_|db[5]~31|datab"
+    Warning (332126): Node "alu_control_|db[5]~31|combout"
+    Warning (332126): Node "alu_|db[5]~21|datac"
+    Warning (332126): Node "alu_|db[5]~21|combout"
+    Warning (332126): Node "alu_|db[5]~22|dataa"
+    Warning (332126): Node "reg_file_|gdfx_temp0[5]~65|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp0[5]~65|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[5]~66|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp0[5]~66|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[5]~69|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp0[5]~69|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[5]~70|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp0[5]~70|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[5]~71|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp0[5]~71|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[5]~12|datab"
+    Warning (332126): Node "reg_file_|db_lo_as[5]~12|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[5]~13|datac"
+    Warning (332126): Node "reg_file_|db_lo_as[5]~13|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[5]~23|dataa"
+    Warning (332126): Node "reg_file_|db_lo_as[5]~23|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[5]~71|datac"
+    Warning (332126): Node "alu_control_|db[5]~30|datad"
+    Warning (332126): Node "bus_control_|db[5]~17|datab"
+    Warning (332126): Node "bus_control_|db[5]~17|combout"
+    Warning (332126): Node "alu_|db_high[3]~23|datac"
+    Warning (332126): Node "alu_|db_high[3]~23|combout"
+    Warning (332126): Node "alu_|db_high[3]~24|datac"
+    Warning (332126): Node "alu_|db_high[0]~14|datac"
+    Warning (332126): Node "alu_|db_high[0]~14|combout"
+    Warning (332126): Node "alu_|db_high[0]~18|dataa"
+    Warning (332126): Node "alu_|db_high[0]~18|combout"
+    Warning (332126): Node "alu_|db_high[0]~19|datab"
+    Warning (332126): Node "alu_|db_high[0]~19|combout"
+    Warning (332126): Node "alu_|db[4]~10|dataa"
+    Warning (332126): Node "alu_|db[4]~10|combout"
+    Warning (332126): Node "alu_control_|db[4]~32|dataa"
+    Warning (332126): Node "alu_control_|db[4]~32|combout"
+    Warning (332126): Node "alu_control_|db[4]~33|dataa"
+    Warning (332126): Node "alu_control_|db[4]~33|combout"
+    Warning (332126): Node "alu_control_|db[4]~34|datad"
+    Warning (332126): Node "alu_control_|db[4]~34|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[4]~53|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp0[4]~53|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[4]~60|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp0[4]~60|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[4]~61|datab"
+    Warning (332126): Node "reg_file_|gdfx_temp0[4]~61|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[4]~9|datab"
+    Warning (332126): Node "reg_file_|db_lo_as[4]~9|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[4]~10|datab"
+    Warning (332126): Node "reg_file_|db_lo_as[4]~10|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[4]~11|datac"
+    Warning (332126): Node "reg_file_|db_lo_as[4]~11|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[4]~61|datad"
+    Warning (332126): Node "alu_control_|db[4]~33|datad"
+    Warning (332126): Node "alu_|db[4]~8|datac"
+    Warning (332126): Node "alu_|db[4]~8|combout"
+    Warning (332126): Node "alu_|db[4]~10|datac"
+    Warning (332126): Node "bus_control_|db[4]~19|datad"
+    Warning (332126): Node "bus_control_|db[4]~19|combout"
+    Warning (332126): Node "sw1_|db_down[4]~1|datad"
+    Warning (332126): Node "sw1_|db_down[4]~1|combout"
+    Warning (332126): Node "alu_control_|db[4]~33|datac"
+    Warning (332126): Node "alu_|db_low[1]~12|dataa"
+    Warning (332126): Node "alu_|db_low[1]~12|combout"
+    Warning (332126): Node "alu_|db_low[1]~14|datad"
+    Warning (332126): Node "alu_|db_low[1]~14|combout"
+    Warning (332126): Node "alu_|db_low[1]~17|datac"
+    Warning (332126): Node "alu_|db_low[1]~17|combout"
+    Warning (332126): Node "alu_|db[1]~16|datac"
+    Warning (332126): Node "alu_|db[1]~16|combout"
+    Warning (332126): Node "alu_control_|db[1]~22|datac"
+    Warning (332126): Node "alu_control_|db[1]~22|combout"
+    Warning (332126): Node "alu_control_|db[1]~24|datab"
+    Warning (332126): Node "alu_control_|db[1]~24|combout"
+    Warning (332126): Node "alu_|db[1]~15|datac"
+    Warning (332126): Node "alu_|db[1]~15|combout"
+    Warning (332126): Node "alu_|db[1]~16|dataa"
+    Warning (332126): Node "reg_file_|gdfx_temp0[1]~28|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp0[1]~28|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[1]~29|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp0[1]~29|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[1]~30|datab"
+    Warning (332126): Node "reg_file_|gdfx_temp0[1]~30|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[1]~31|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp0[1]~31|combout"
+    Warning (332126): Node "reg_file_|db_lo_ds[1]~2|datac"
+    Warning (332126): Node "reg_file_|db_lo_ds[1]~2|combout"
+    Warning (332126): Node "alu_control_|db[1]~23|dataa"
+    Warning (332126): Node "alu_control_|db[1]~23|combout"
+    Warning (332126): Node "alu_control_|db[1]~24|datad"
+    Warning (332126): Node "reg_file_|db_lo_as[1]~3|dataa"
+    Warning (332126): Node "reg_file_|db_lo_as[1]~3|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[1]~4|datad"
+    Warning (332126): Node "reg_file_|db_lo_as[1]~4|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[1]~20|dataa"
+    Warning (332126): Node "reg_file_|db_lo_as[1]~20|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[1]~31|datab"
+    Warning (332126): Node "bus_control_|db[1]~12|datad"
+    Warning (332126): Node "bus_control_|db[1]~12|combout"
+    Warning (332126): Node "bus_control_|db[1]~13|datad"
+    Warning (332126): Node "bus_control_|db[1]~13|combout"
+    Warning (332126): Node "alu_control_|db[1]~23|datac"
+    Warning (332126): Node "alu_|db_low[1]~16|datac"
+    Warning (332126): Node "alu_|db_low[1]~16|combout"
+    Warning (332126): Node "alu_|db_low[1]~17|datab"
+    Warning (332126): Node "alu_|db_low[0]~21|datad"
+    Warning (332126): Node "alu_|db_low[0]~21|combout"
+    Warning (332126): Node "alu_|db_low[0]~22|datad"
+    Warning (332126): Node "alu_|db_low[0]~22|combout"
+    Warning (332126): Node "alu_|db_low[0]~23|datab"
+    Warning (332126): Node "alu_|db_low[0]~23|combout"
+    Warning (332126): Node "alu_|db[0]~17|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp1[1]~27|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp1[1]~27|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[1]~29|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp1[1]~29|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[1]~30|dataa"
+    Warning (332126): Node "reg_file_|gdfx_temp1[1]~30|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[1]~31|datab"
+    Warning (332126): Node "reg_file_|gdfx_temp1[1]~31|combout"
+    Warning (332126): Node "alu_|db[1]~15|datad"
+    Warning (332126): Node "reg_file_|db_hi_as[1]~3|dataa"
+    Warning (332126): Node "reg_file_|db_hi_as[1]~3|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[1]~4|datad"
+    Warning (332126): Node "reg_file_|db_hi_as[1]~4|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[1]~19|dataa"
+    Warning (332126): Node "reg_file_|db_hi_as[1]~19|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[1]~31|datac"
+    Warning (332126): Node "alu_|db_low[2]~9|datac"
+    Warning (332126): Node "alu_|db_low[2]~9|combout"
+    Warning (332126): Node "alu_|db_low[2]~10|datad"
+    Warning (332126): Node "alu_|db_low[2]~10|combout"
+    Warning (332126): Node "alu_|db_low[2]~11|datac"
+    Warning (332126): Node "alu_|db_low[2]~11|combout"
+    Warning (332126): Node "alu_|db[2]~12|datac"
+    Warning (332126): Node "alu_|db[2]~12|combout"
+    Warning (332126): Node "alu_|db_low[2]~10|datab"
+    Warning (332126): Node "alu_|db_low[1]~15|datac"
+    Warning (332126): Node "alu_|db_low[1]~15|combout"
+    Warning (332126): Node "alu_|db_low[1]~16|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp1[2]~36|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp1[2]~36|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[2]~38|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp1[2]~38|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[2]~39|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp1[2]~39|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[2]~40|dataa"
+    Warning (332126): Node "reg_file_|gdfx_temp1[2]~40|combout"
+    Warning (332126): Node "alu_|db[2]~11|datab"
+    Warning (332126): Node "alu_|db[2]~11|combout"
+    Warning (332126): Node "alu_|db[2]~12|datab"
+    Warning (332126): Node "reg_file_|db_hi_as[2]~5|datad"
+    Warning (332126): Node "reg_file_|db_hi_as[2]~5|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[2]~6|datab"
+    Warning (332126): Node "reg_file_|db_hi_as[2]~6|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[2]~20|dataa"
+    Warning (332126): Node "reg_file_|db_hi_as[2]~20|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[2]~40|datac"
+    Warning (332126): Node "alu_|db_low[3]~3|datad"
+    Warning (332126): Node "alu_|db_low[3]~3|combout"
+    Warning (332126): Node "alu_|db_low[3]~4|datac"
+    Warning (332126): Node "alu_|db_low[3]~4|combout"
+    Warning (332126): Node "alu_|db_low[3]~5|datab"
+    Warning (332126): Node "alu_|db_low[3]~5|combout"
+    Warning (332126): Node "alu_|db[3]~13|datab"
+    Warning (332126): Node "alu_|db[3]~13|combout"
+    Warning (332126): Node "alu_|db[3]~14|datab"
+    Warning (332126): Node "alu_|db[3]~14|combout"
+    Warning (332126): Node "alu_|db_high[0]~16|datac"
+    Warning (332126): Node "alu_|db_high[0]~16|combout"
+    Warning (332126): Node "alu_|db_high[0]~17|datad"
+    Warning (332126): Node "alu_|db_high[0]~17|combout"
+    Warning (332126): Node "alu_|db_high[0]~18|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp1[3]~45|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp1[3]~45|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[3]~47|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp1[3]~47|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[3]~48|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp1[3]~48|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[3]~49|datab"
+    Warning (332126): Node "reg_file_|gdfx_temp1[3]~49|combout"
+    Warning (332126): Node "alu_|db[3]~13|datac"
+    Warning (332126): Node "reg_file_|db_hi_as[3]~7|datad"
+    Warning (332126): Node "reg_file_|db_hi_as[3]~7|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[3]~8|datad"
+    Warning (332126): Node "reg_file_|db_hi_as[3]~8|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[3]~21|datab"
+    Warning (332126): Node "reg_file_|db_hi_as[3]~21|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[3]~49|datac"
+    Warning (332126): Node "alu_|db_low[3]~4|datad"
+    Warning (332126): Node "alu_|db_low[2]~9|datad"
+    Warning (332126): Node "alu_control_|db[3]~35|datad"
+    Warning (332126): Node "alu_control_|db[3]~35|combout"
+    Warning (332126): Node "alu_control_|db[3]~36|datad"
+    Warning (332126): Node "alu_control_|db[3]~36|combout"
+    Warning (332126): Node "alu_control_|db[3]~37|datad"
+    Warning (332126): Node "alu_control_|db[3]~37|combout"
+    Warning (332126): Node "alu_|db[3]~14|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp0[3]~45|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp0[3]~45|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[3]~46|dataa"
+    Warning (332126): Node "reg_file_|gdfx_temp0[3]~46|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[3]~49|dataa"
+    Warning (332126): Node "reg_file_|gdfx_temp0[3]~49|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[3]~50|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp0[3]~50|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[3]~51|datab"
+    Warning (332126): Node "reg_file_|gdfx_temp0[3]~51|combout"
+    Warning (332126): Node "alu_control_|db[3]~37|dataa"
+    Warning (332126): Node "reg_file_|db_lo_as[3]~7|datab"
+    Warning (332126): Node "reg_file_|db_lo_as[3]~7|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[3]~8|datac"
+    Warning (332126): Node "reg_file_|db_lo_as[3]~8|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[3]~22|datab"
+    Warning (332126): Node "reg_file_|db_lo_as[3]~22|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[3]~51|datad"
+    Warning (332126): Node "bus_control_|db[3]~21|datad"
+    Warning (332126): Node "bus_control_|db[3]~21|combout"
+    Warning (332126): Node "alu_control_|db[3]~36|datac"
+    Warning (332126): Node "alu_|db_low[1]~12|datac"
+    Warning (332126): Node "alu_|db_high[3]~23|dataa"
+    Warning (332126): Node "alu_|db_high[0]~14|datab"
+    Warning (332126): Node "alu_|db_high[1]~11|dataa"
+    Warning (332126): Node "alu_|db_high[1]~11|combout"
+    Warning (332126): Node "alu_|db_high[1]~12|datab"
+    Warning (332126): Node "alu_|db_low[0]~18|datac"
+    Warning (332126): Node "alu_|db_low[0]~18|combout"
+    Warning (332126): Node "alu_|db_low[0]~20|datad"
+    Warning (332126): Node "alu_|db_low[0]~20|combout"
+    Warning (332126): Node "alu_|db_low[0]~23|datad"
+    Warning (332126): Node "alu_|db_high[2]~5|dataa"
+    Warning (332126): Node "alu_|db_high[2]~5|combout"
+    Warning (332126): Node "alu_|db_high[2]~6|datad"
+    Warning (332126): Node "alu_|db_low[2]~6|datab"
+    Warning (332126): Node "alu_|db_low[2]~6|combout"
+    Warning (332126): Node "alu_|db_low[2]~8|datad"
+    Warning (332126): Node "alu_|db_low[2]~8|combout"
+    Warning (332126): Node "alu_|db_low[2]~11|dataa"
+    Warning (332126): Node "alu_|b2v_input_bit_select|bs_out_high_ALTERA_SYNTHESIZED~2|datab"
+    Warning (332126): Node "alu_|b2v_input_bit_select|bs_out_high_ALTERA_SYNTHESIZED~2|combout"
+    Warning (332126): Node "alu_|db_low[3]~1|datad"
+    Warning (332126): Node "alu_|db_low[3]~1|combout"
+    Warning (332126): Node "alu_|db_low[3]~2|datad"
+    Warning (332126): Node "alu_|db_low[3]~2|combout"
+    Warning (332126): Node "alu_|db_low[3]~5|datac"
+    Warning (332126): Node "alu_control_|db[2]~19|datad"
+    Warning (332126): Node "alu_control_|db[2]~19|combout"
+    Warning (332126): Node "alu_control_|db[2]~21|datab"
+    Warning (332126): Node "alu_control_|db[2]~21|combout"
+    Warning (332126): Node "bus_control_|db[2]~10|datad"
+    Warning (332126): Node "bus_control_|db[2]~10|combout"
+    Warning (332126): Node "bus_control_|db[2]~11|datac"
+    Warning (332126): Node "bus_control_|db[2]~11|combout"
+    Warning (332126): Node "alu_control_|db[2]~20|datac"
+    Warning (332126): Node "alu_control_|db[2]~20|combout"
+    Warning (332126): Node "alu_control_|db[2]~21|datad"
+    Warning (332126): Node "alu_|db[2]~11|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp0[2]~38|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp0[2]~38|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[2]~39|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp0[2]~39|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[2]~40|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp0[2]~40|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[2]~41|datab"
+    Warning (332126): Node "reg_file_|gdfx_temp0[2]~41|combout"
+    Warning (332126): Node "reg_file_|db_lo_ds[2]~1|datac"
+    Warning (332126): Node "reg_file_|db_lo_ds[2]~1|combout"
+    Warning (332126): Node "alu_control_|db[2]~20|datad"
+    Warning (332126): Node "reg_file_|db_lo_as[2]~5|datad"
+    Warning (332126): Node "reg_file_|db_lo_as[2]~5|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[2]~6|datac"
+    Warning (332126): Node "reg_file_|db_lo_as[2]~6|combout"
+    Warning (332126): Node "reg_file_|db_lo_as[2]~21|datab"
+    Warning (332126): Node "reg_file_|db_lo_as[2]~21|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp0[2]~41|datad"
+    Warning (332126): Node "alu_|db_high[3]~23|datad"
+    Warning (332126): Node "alu_|db_high[0]~14|datad"
+    Warning (332126): Node "alu_|db_high[1]~11|datad"
+    Warning (332126): Node "alu_|db_low[0]~18|dataa"
+    Warning (332126): Node "alu_|db_high[2]~5|datad"
+    Warning (332126): Node "alu_|db_low[2]~6|datad"
+    Warning (332126): Node "alu_|b2v_input_bit_select|bs_out_high_ALTERA_SYNTHESIZED~2|datad"
+    Warning (332126): Node "alu_|db_high[0]~17|datac"
+    Warning (332126): Node "alu_|db_high[1]~8|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp1[4]~54|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp1[4]~54|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[4]~56|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp1[4]~56|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[4]~57|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp1[4]~57|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[4]~58|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp1[4]~58|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[4]~9|datad"
+    Warning (332126): Node "reg_file_|db_hi_as[4]~9|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[4]~10|datad"
+    Warning (332126): Node "reg_file_|db_hi_as[4]~10|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[4]~22|datac"
+    Warning (332126): Node "reg_file_|db_hi_as[4]~22|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[4]~58|datab"
+    Warning (332126): Node "alu_|db[4]~8|datad"
+    Warning (332126): Node "alu_|db_low[3]~3|datac"
+    Warning (332126): Node "alu_|db_high[1]~11|datac"
+    Warning (332126): Node "alu_|db_low[0]~18|datad"
+    Warning (332126): Node "alu_|db_high[2]~5|datac"
+    Warning (332126): Node "alu_|db_low[2]~6|datac"
+    Warning (332126): Node "alu_|db_low[3]~1|datac"
+    Warning (332126): Node "alu_control_|db[5]~31|datad"
+    Warning (332126): Node "alu_|db_low[1]~12|datad"
+    Warning (332126): Node "alu_|db_high[0]~16|datad"
+    Warning (332126): Node "alu_|db_high[1]~9|dataa"
+    Warning (332126): Node "alu_|db_high[2]~2|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp1[5]~63|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp1[5]~63|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[5]~65|dataa"
+    Warning (332126): Node "reg_file_|gdfx_temp1[5]~65|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[5]~66|datab"
+    Warning (332126): Node "reg_file_|gdfx_temp1[5]~66|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[5]~67|datab"
+    Warning (332126): Node "reg_file_|gdfx_temp1[5]~67|combout"
+    Warning (332126): Node "alu_|db[5]~21|datad"
+    Warning (332126): Node "reg_file_|db_hi_as[5]~11|dataa"
+    Warning (332126): Node "reg_file_|db_hi_as[5]~11|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[5]~12|datad"
+    Warning (332126): Node "reg_file_|db_hi_as[5]~12|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[5]~13|dataa"
+    Warning (332126): Node "reg_file_|db_hi_as[5]~13|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[5]~67|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp1[7]~82|datad"
+    Warning (332126): Node "reg_file_|gdfx_temp1[7]~82|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[7]~84|datac"
+    Warning (332126): Node "reg_file_|gdfx_temp1[7]~84|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[7]~85|datab"
+    Warning (332126): Node "reg_file_|gdfx_temp1[7]~85|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[7]~86|datab"
+    Warning (332126): Node "reg_file_|gdfx_temp1[7]~86|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[7]~16|dataa"
+    Warning (332126): Node "reg_file_|db_hi_as[7]~16|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[7]~17|datab"
+    Warning (332126): Node "reg_file_|db_hi_as[7]~17|combout"
+    Warning (332126): Node "reg_file_|db_hi_as[7]~24|datab"
+    Warning (332126): Node "reg_file_|db_hi_as[7]~24|combout"
+    Warning (332126): Node "reg_file_|gdfx_temp1[7]~86|dataa"
+    Warning (332126): Node "alu_|db[7]~19|datad"
+    Warning (332126): Node "alu_control_|b2v_inst_shift_mux|out~1|datad"
+    Warning (332126): Node "alu_|db_low[0]~21|dataa"
+    Warning (332126): Node "alu_|db_low[0]~22|datac"
+    Warning (332126): Node "alu_|db_low[1]~15|datad"
+    Warning (332126): Node "bus_control_|db[0]~15|datad"
+    Warning (332126): Node "bus_control_|db[0]~15|combout"
+    Warning (332126): Node "sw1_|db_down[0]~0|datac"
+    Warning (332126): Node "sw1_|db_down[0]~0|combout"
+    Warning (332126): Node "alu_control_|db[0]~26|datac"
+Critical Warning (332081): Design contains combinational loop of 513 nodes. Estimating the delays through the loop.
+Warning (332060): Node: CLK was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register address_pins:address_pins_|DFFE_apin_latch[0] is being clocked by CLK
+Warning (332060): Node: nNMI was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register interrupts:interrupts_|nmi_armed is being clocked by nNMI
+Warning (332068): No clocks defined in design.
+Info (223000): Starting Vectorless Power Activity Estimation
+Warning (222013): Relative toggle rates could not be calculated because no clock domain could be identified for some nodes
+Info (223001): Completed Vectorless Power Activity Estimation
+Info (218000): Using Advanced I/O Power to simulate I/O buffers with the specified board trace model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (215049): Average toggle rate for this design is 0.000 millions of transitions / sec
+Info (215031): Total thermal power estimate for the design is 72.34 mW
+Info: Quartus Prime Power Analyzer was successful. 0 errors, 521 warnings
+    Info: Peak virtual memory: 4898 megabytes
+    Info: Processing ended: Fri Oct 25 17:41:54 2024
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:07
+
+
