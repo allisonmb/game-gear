@@ -32,7 +32,7 @@ The game cartridge contains the data for the game itself and can be swapped out 
 The game gear has a 3.2 inch backlit 256x192 resolution LCD screen using vga communication [5]. Since it is nearly impossible to find a screen of this resoultion today, a higher resolution screen will be used and the graphics adjusted accordingly. 
 
 ### Sound
-The sound chip on the game gear is a SN76496 with four channel mono sound and three square wave generator outputted through one speaker in the console [6]. The majority of the components for the sound are contained on the sound board [1]. The SN76496 is obsolite so it will be recreated through emulation. It is also possible to play sound through the headphone jack on the top of the console which will be included in this recreation.
+The sound chip on the game gear is a SN76489 with four channel mono sound and three square wave generator outputted through one speaker in the console [6]. The majority of the components for the sound are contained on the sound board [1]. The SN76496 is obsolite so it will be recreated through emulation. It is also possible to play sound through the headphone jack on the top of the console which will be included in this recreation.
 
 ### Inputs
 #### Buttons
