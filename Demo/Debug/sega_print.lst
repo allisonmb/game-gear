@@ -1,0 +1,20 @@
+Zilog eZ80 Macro Assembler Version 4.3 (19073001)30-Nov-24     18:27:39     page:   1
+
+
+PC     Object              I  Line    Source 
+                           A     1    .org %0
+                           A     2    
+                           A     3    ;Load the address $9020 into the IX register - 
+000000 DD212090            A     4    LD IX, 9020h
+                           A     5    
+                           A     6    ;Store 0x53 at $9020
+000004 DD360053            A     7    LD (IX+0), 53h
+                           A     8    
+000008                     A     9    end:
+                           A    10    
+000008 C3 08 00            A    11    JP end	
+
+
+Errors: 0
+Warnings: 0
+Lines Assembled: 12
