@@ -4,7 +4,7 @@ Copyright (C) 1999-2008 Zilog, Inc. All Rights Reserved
 
 LINK MAP:
 
-DATE:      Sat Nov 30 19:12:30 2024
+DATE:      Sat Nov 30 19:45:09 2024
 PROCESSOR: assembler
 FILES:     .\sega_print.obj
 
@@ -65,8 +65,8 @@ SPACE ALLOCATION:
 
 Space                     Base         Top      Size      Used    Unused
 ------------------ ----------- ----------- --------- --------- ---------
-ROM                   C:000000    C:000049   100000H       4AH    FFFB6H
-                                          (  1048576        74   1048502)
+ROM                   C:000000    C:00005D   100000H       5EH    FFFA2H
+                                          (  1048576        94   1048482)
 
 
 SEGMENTS WITHIN SPACE:
@@ -74,16 +74,16 @@ SEGMENTS WITHIN SPACE:
 
 ROM                               Type        Base         Top      Size
 ------------------ ------------------- ----------- ----------- ---------
-$$$org0FD7489D     absolute data          C:000000    C:000049       4ah
+$$$org0FD7489D     absolute data          C:000000    C:00005D       5eh
 
 SEGMENTS WITHIN MODULES:
 ========================
 
-Module: C:\Users\Allison\Desktop\UF\Year 4 Semester 1\Senior Design\Project\game-gear\Demo\sega_print.asm (File: sega_print.obj) Version: 1:0 11/30/2024 19:12:30
+Module: C:\Users\Allison\Desktop\UF\Year 4 Semester 1\Senior Design\Project\game-gear\Demo\sega_print.asm (File: sega_print.obj) Version: 1:0 11/30/2024 19:45:09
 
     Name                                           Base         Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: $$$org0FD7489D                    C:000000    C:000049       4ah
+    Segment: $$$org0FD7489D                    C:000000    C:00005D       5eh
 
 EXTERNAL DEFINITIONS:
 =====================
@@ -148,8 +148,8 @@ _SYS_CLK_SRC                      Defined     LINKER
 
 OUTPUT CHECKSUM
 ===============
-Demo.hex             002021
-Demo.lod             002021
+Demo.hex             0028C9
+Demo.lod             0028C9
 
 
 

@@ -14,7 +14,7 @@ ADD A, 30h
 LD (IX+0), A
 INC IX
 
-;Subtract 0x3 from 0x50 and store at $9022
+;Subtract 0x9 from 0x50 and store at $9022
 LD A, 50h
 SUB 9h
 LD (IX+0), A
@@ -43,28 +43,36 @@ LD (IX+0), A
 INC IX
 
 ;Perform logical right shit on 0xC3 and store at $9026 - note the carry flag is 1
+LD C, C3h
+SRL C
+LD (IX+0), C
 INC IX
 
 ;Perform rotate left on 0x36 and store at $9027
+LD C, 36h
+RL C
+LD (IX+0), C
 INC IX
 
 ;Call get65h function and get the returned value from the stack and store at $9028
 INC IX
 
-;Set bit 5 in register C and store value in C at $9029
+;Set bit 5 in register B and store value in B at $9029
+SET 5, B
+LD (IX+0), B
 INC IX
 
 ;Jump to get47h function in the middle of the code. 47 will be stored at $9030
 INC IX
 
 ;Retrieve the value 0x65 from $9028 in memory and store at $9031
-INC IX
 
 ;Get 61 from imput instruction (this may not be possible with ide) and store at $9032
-INC IX
 
 ;Perform arithmetic left shift on 0xD9 and store at $9033
-INC IX
+LD C, B9h
+SLA C
+LD (IX+2), C
 
 end:
 
