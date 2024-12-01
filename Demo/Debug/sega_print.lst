@@ -1,4 +1,4 @@
-Zilog eZ80 Macro Assembler Version 4.3 (19073001)30-Nov-24     19:45:09     page:   1
+Zilog eZ80 Macro Assembler Version 4.3 (19073001)30-Nov-24     19:56:38     page:   1
 
 
 PC     Object              I  Line    Source 
@@ -19,70 +19,79 @@ PC     Object              I  Line    Source
 000011 DD23                A    15    INC IX
                            A    16    
                            A    17    ;Subtract 0x9 from 0x50 and store at $9022
-000013 3E50                A    18    LD A, 50h
-000015 D609                A    19    SUB 9h
-000017 DD7700              A    20    LD (IX+0), A
-00001A DD23                A    21    INC IX
-                           A    22    
+000013                     A    18    get47h:
+000013 3E50                A    19    LD A, 50h
+000015 D609                A    20    SUB 9h
+000017 DD7700              A    21    LD (IX+0), A
+00001A DD23                A    22    INC IX
                            A    23    
-                           A    24    ;OR 0x40 with 0x01 and store at $9023
-00001C 3E40                A    25    LD A, 40h
-00001E F601                A    26    OR 1h
-000020 DD7700              A    27    LD (IX+0), A
-000023 DD23                A    28    INC IX
+                           A    24    ;load the value at $902A and check if that valu
+00001C 212A90              A    25    LD HL, 902Ah
+00001F 56                  A    26    LD D, (HL)
+000020 BA                  A    27    CP D
+000021 CA 5D 00            A    28    JP Z, get47hReturn
                            A    29    
-                           A    30    ;exhange the AF and AF' registers to store 0x41
-000025 08                  A    31    EX AF, AF'
-                           A    32    
-                           A    33    ;AND 0xEC with 0x20 and store at $9024
-000026 3EEC                A    34    LD A, ECh
-000028 E620                A    35    AND 20h
-00002A DD7700              A    36    LD (IX+0), A
-00002D DD23                A    37    INC IX
-                           A    38    
-                           A    39    ;XOR 0x41 with 0x6 and store at $9025 - retriev
-00002F 08                  A    40    EX AF, AF'
-000030 EE06                A    41    XOR 6h
-000032 DD7700              A    42    LD (IX+0), A
-000035 DD23                A    43    INC IX
-                           A    44    
-                           A    45    ;Perform logical right shit on 0xC3 and store a
-000037 0EC3                A    46    LD C, C3h
-000039 CB39                A    47    SRL C
-00003B DD7100              A    48    LD (IX+0), C
-00003E DD23                A    49    INC IX
-                           A    50    
-                           A    51    ;Perform rotate left on 0x36 and store at $9027
-000040 0E36                A    52    LD C, 36h
-000042 CB11                A    53    RL C
-000044 DD7100              A    54    LD (IX+0), C
-000047 DD23                A    55    INC IX
-                           A    56    
-                           A    57    ;Call get65h function and get the returned valu
-000049 DD23                A    58    INC IX
-                           A    59    
-                           A    60    ;Set bit 5 in register B and store value in B a
-00004B CBE8                A    61    SET 5, B
-00004D DD7000              A    62    LD (IX+0), B
-000050 DD23                A    63    INC IX
+                           A    30    
+                           A    31    
+                           A    32    ;OR 0x40 with 0x01 and store at $9023
+000024 3E40                A    33    LD A, 40h
+000026 F601                A    34    OR 1h
+000028 DD7700              A    35    LD (IX+0), A
+00002B DD23                A    36    INC IX
+                           A    37    
+                           A    38    ;exhange the AF and AF' registers to store 0x41
+00002D 08                  A    39    EX AF, AF'
+                           A    40    
+                           A    41    ;AND 0xEC with 0x20 and store at $9024
+00002E 3EEC                A    42    LD A, ECh
+000030 E620                A    43    AND 20h
+000032 DD7700              A    44    LD (IX+0), A
+000035 DD23                A    45    INC IX
+                           A    46    
+                           A    47    ;XOR 0x41 with 0x6 and store at $9025 - retriev
+000037 08                  A    48    EX AF, AF'
+000038 EE06                A    49    XOR 6h
+00003A DD7700              A    50    LD (IX+0), A
+00003D DD23                A    51    INC IX
+                           A    52    
+                           A    53    ;Perform logical right shit on 0xC3 and store a
+00003F 0EC3                A    54    LD C, C3h
+000041 CB39                A    55    SRL C
+000043 DD7100              A    56    LD (IX+0), C
+000046 DD23                A    57    INC IX
+                           A    58    
+                           A    59    ;Perform rotate left on 0x36 and store at $9027
+000048 0E36                A    60    LD C, 36h
+00004A CB11                A    61    RL C
+00004C DD7100              A    62    LD (IX+0), C
+00004F DD23                A    63    INC IX
                            A    64    
-                           A    65    ;Jump to get47h function in the middle of the c
-000052 DD23                A    66    INC IX
+                           A    65    ;Call get65h function and get the returned valu
+000051 DD23                A    66    INC IX
                            A    67    
-                           A    68    ;Retrieve the value 0x65 from $9028 in memory a
-                           A    69    
-                           A    70    ;Get 61 from imput instruction (this may not be
-                           A    71    
-                           A    72    ;Perform arithmetic left shift on 0xD9 and stor
-000054 0EB9                A    73    LD C, B9h
-000056 CB21                A    74    SLA C
-000058 DD7102              A    75    LD (IX+2), C
+                           A    68    ;Set bit 5 in register B and store value in B a
+000053 CBE8                A    69    SET 5, B
+000055 DD7000              A    70    LD (IX+0), B
+000058 DD23                A    71    INC IX
+                           A    72    
+                           A    73    ;Jump to get47h function in the middle of the c
+00005A C3 13 00            A    74    JP get47h
+00005D                     A    75    get47hReturn:
                            A    76    
-00005B                     A    77    end:
+                           A    77    ;Retrieve the value 0x65 from $9028 in memory a
                            A    78    
-00005B C3 5B 00            A    79    JP end	
+                           A    79    ;Get 61 from imput instruction (this may not be
+                           A    80    
+                           A    81    ;Perform arithmetic left shift on 0xD9 and stor
+00005D 0EB9                A    82    LD C, B9h
+00005F CB21                A    83    SLA C
+000061 DD7102              A    84    LD (IX+2), C
+                           A    85    
+000064                     A    86    end:
+                           A    87    
+000064 C3 64 00            A    88    JP end	
 
 
 Errors: 0
 Warnings: 0
-Lines Assembled: 80
+Lines Assembled: 89

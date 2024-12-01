@@ -15,10 +15,18 @@ LD (IX+0), A
 INC IX
 
 ;Subtract 0x9 from 0x50 and store at $9022
+get47h:
 LD A, 50h
 SUB 9h
 LD (IX+0), A
 INC IX
+
+;load the value at $902A and check if that value is 47. if no, continue. if yes, jump to get47hReturn
+LD HL, 902Ah
+LD D, (HL)
+CP D
+JP Z, get47hReturn
+
 
 
 ;OR 0x40 with 0x01 and store at $9023
@@ -62,14 +70,15 @@ SET 5, B
 LD (IX+0), B
 INC IX
 
-;Jump to get47h function in the middle of the code. 47 will be stored at $9030
-INC IX
+;Jump to get47h function in the middle of the code. 47 will be stored at $902A
+JP get47h
+get47hReturn:
 
-;Retrieve the value 0x65 from $9028 in memory and store at $9031
+;Retrieve the value 0x65 from $9028 in memory and store at $902B
 
-;Get 61 from imput instruction (this may not be possible with ide) and store at $9032
+;Get 61 from imput instruction (this may not be possible with ide) and store at $902C
 
-;Perform arithmetic left shift on 0xD9 and store at $9033
+;Perform arithmetic left shift on 0xD9 and store at $902D
 LD C, B9h
 SLA C
 LD (IX+2), C

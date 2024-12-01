@@ -197,9 +197,16 @@
 <!-- breakpoint information -->
 <breakpoints>
 <breakpoint temporary="false" enabled="true" >
-<line-number>43</line-number>
+<line-number>51</line-number>
 <pathname>C:\Users\Allison\Desktop\UF\Year 4 Semester 1\Senior Design\Project\game-gear\Demo\sega_print.asm</pathname>
 <address>53</address>
+<command></command>
+<preserve-type>0</preserve-type>
+</breakpoint>
+<breakpoint temporary="false" enabled="true" >
+<line-number>22</line-number>
+<pathname>C:\Users\Allison\Desktop\UF\Year 4 Semester 1\Senior Design\Project\game-gear\Demo\sega_print.asm</pathname>
+<address>0</address>
 <command></command>
 <preserve-type>0</preserve-type>
 </breakpoint>
