@@ -63,6 +63,9 @@ LD (IX+0), C
 INC IX
 
 ;Call get65h function and get the returned value from the stack and store at $9028
+CALL get65h
+POP DE
+LD (IX+0), E
 INC IX
 
 ;Set bit 5 in register B and store value in B at $9029
@@ -75,8 +78,22 @@ JP get47h
 get47hReturn:
 
 ;Retrieve the value 0x65 from $9028 in memory and store at $902B
+LD H, 90h
+LD L, 28h
+LD D, (HL)
+LD (IX+0), D
 
-;Get 61 from imput instruction (this may not be possible with ide) and store at $902C
+;Get value from imput instruction - will be FF since nothing is connected to the input
+LD C, 7h
+IN D, (C)
+
+;Reset the appropriate bits in D to change FF to 61
+RES 7, D
+RES 4, D
+RES 3, D
+RES 2, D
+RES 1, D
+LD  (IX+1), D
 
 ;Perform arithmetic left shift on 0xD9 and store at $902D
 LD C, B9h
@@ -85,4 +102,14 @@ LD (IX+2), C
 
 end:
 
-JP end	
+JP end
+
+get65h:
+	;store value in sp
+	POP HL
+	;store 65h in C and push onto stack
+	LD C, 65h
+	PUSH BC
+	;push the original sp onto the stack
+	PUSH HL
+	RET
