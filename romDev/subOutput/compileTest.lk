@@ -1,0 +1,12 @@
+-mjwx
+-i subOutput/compileTest.ihx
+-b _CODE = 0x0200
+-b _DATA = 0xc000
+-k C:\Program Files\SDCC\bin\..\lib\z80
+-l SMSlib/SMSlib_GG.lib
+-l z80
+crt0/crt0_sms.rel
+subOutput/compileTest.rel
+subOutput/assets.rel
+
+-e

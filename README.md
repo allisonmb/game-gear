@@ -70,6 +70,9 @@ Speaker
 IC2 - VRAM
 Cartridge
 
+### Emulator Work
+As part of our prototype we are developing a simple test ROM to run a "Hello World" demo program on any Game Gear Emulator. We are using DevkitSMS for this which is a library that allows c code to be compiled into Sega Master System and Sega Game Gear files. This process involves using a tool called BMP2Tile to turn a BMP image into readable tile and palette formats. The program uses the library's SMS_loadPSGaidencompressedTiles(), SMS_loadSTMcompresssedTileMap, GG_loadBGPalette(), SMS_displayOn(), and SMS_waitForVBlank() methods to load and display the "Hello World" background. 
+
 ## Known Bugs
 ### IC3 - Main RAM
 Possible timing issue due to the difference of some values in the read/write cycle for the replacement RAM. These values are: output hold from address change, chip selection to output in low z, write recovery time, and output active from end of write. This is unlikely to cause problems since the replacement RAM is faster and the difference is small (5ns).
