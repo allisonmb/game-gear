@@ -48,6 +48,9 @@ At the top of the console there is a headphone jack, gear-to-gear cable input, a
 
 Figure 5: All inputs for the game gear [1]
 
+### Emulator Work
+As part of our prototype we are developing a simple test ROM to run a "Hello World" demo program on any Game Gear Emulator. We are using DevkitSMS for this which is a library that allows c code to be compiled into Sega Master System and Sega Game Gear files. This process involves using a tool called BMP2Tile to turn a BMP image into readable tile and palette formats. The program uses the library's SMS_loadPSGaidencompressedTiles(), SMS_loadSTMcompresssedTileMap, GG_loadBGPalette(), SMS_displayOn(), and SMS_waitForVBlank() methods to load and display the "Hello World" background. 
+
 ## Completed components
 IC3 - Main RAM
 
@@ -70,8 +73,7 @@ Speaker
 IC2 - VRAM
 Cartridge
 
-### Emulator Work
-As part of our prototype we are developing a simple test ROM to run a "Hello World" demo program on any Game Gear Emulator. We are using DevkitSMS for this which is a library that allows c code to be compiled into Sega Master System and Sega Game Gear files. This process involves using a tool called BMP2Tile to turn a BMP image into readable tile and palette formats. The program uses the library's SMS_loadPSGaidencompressedTiles(), SMS_loadSTMcompresssedTileMap, GG_loadBGPalette(), SMS_displayOn(), and SMS_waitForVBlank() methods to load and display the "Hello World" background. 
+
 
 ## Known Bugs
 ### IC3 - Main RAM
