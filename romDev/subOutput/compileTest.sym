@@ -7,18 +7,29 @@ Symbol Table
     .__.ABS.                                                    =  000000 G
     .__.CPU.                                                    =  000000 L
     .__.H$L.                                                    =  000000 L
+  1 _BallX                                                         000000 GR
+  1 _BallY                                                         000001 GR
     _DemoBG_bin                                                    ****** GX
     _DemoBG_psgcompr                                               ****** GX
     _DemoBG_stmcompr                                               ****** GX
     _GG_loadBGPalette                                              ****** GX
+    _GG_loadSpritePalette                                          ****** GX
+    _Nole_bin                                                      ****** GX
+    _Nole_psgcompr                                                 ****** GX
     _ROM_bank_to_be_mapped_on_slot0                             =  00FFFD G
     _ROM_bank_to_be_mapped_on_slot1                             =  00FFFE G
     _ROM_bank_to_be_mapped_on_slot2                             =  00FFFF G
     _SMS_SRAM                                                   =  008000 G
     _SMS_VDPControlPort                                         =  0000BF 
     _SMS_VDPturnOnFeature                                          ****** GX
+    _SMS_addSprite_f                                               ****** GX
+    _SMS_copySpritestoSAT                                          ****** GX
+    _SMS_getKeysReleased                                           ****** GX
+    _SMS_getKeysStatus                                             ****** GX
+    _SMS_initSprites                                               ****** GX
     _SMS_loadPSGaidencompressedTilesatAddr                         ****** GX
     _SMS_loadSTMcompressedTileMapatAddr                            ****** GX
+    _SMS_setSpriteMode                                             ****** GX
     _SMS_waitForVBlank                                             ****** GX
     _SRAM_bank_to_be_mapped_on_slot2                            =  00FFFC G
   A ___SMS__SDSC_author                                            007FD1 GR
@@ -26,18 +37,27 @@ Symbol Table
   B ___SMS__SDSC_name                                              007FC5 GR
   D ___SMS__SDSC_signature                                         007FE0 GR
   9 ___SMS__SEGA_signature                                         007FF0 GR
-  0 __str_0                                                        000025 R
-  0 __str_1                                                        000034 R
-  0 __str_2                                                        000040 R
+  0 __str_0                                                        000045 R
+  0 __str_1                                                        000054 R
+  0 __str_2                                                        000060 R
+  0 _drawBall                                                      000177 GR
+    _gator_bin                                                     ****** GX
+    _gator_psgcompr                                                ****** GX
+  0 _initGame                                                      000024 GR
+  0 _loadAssets                                                    000080 GR
+  1 _logo                                                          000002 GR
   0 _main                                                          000000 GR
+  0 _moveBall                                                      0000A8 GR
+  1 _release                                                       000003 GR
+
 
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80 / R800)                          Page 2
 Hexadecimal [24-Bits]
 
 Area Table
 
-   0 _CODE                                      size     60   flags    0
-   1 _DATA                                      size      0   flags    0
+   0 _CODE                                      size    1EB   flags    0
+   1 _DATA                                      size      4   flags    0
    2 _INITIALIZED                               size      0   flags    0
    3 _DABS                                      size      0   flags    8
    4 _HOME                                      size      0   flags    0

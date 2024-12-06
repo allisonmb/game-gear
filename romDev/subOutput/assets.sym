@@ -7,12 +7,24 @@ Symbol Table
     .__.ABS.                                                    =  000000 G
     .__.CPU.                                                    =  000000 L
     .__.H$L.                                                    =  000000 L
-  0 _DemoBG_bin                                                    000000 GR
-  0 _DemoBG_psgcompr                                               000020 GR
-  0 _DemoBG_stmcompr                                               0004B4 GR
-  0 _HelloWorldPalette_bin                                         0004EC GR
-  0 _HelloWorldTilemap_stmcompr                                    00050C GR
-  0 _HelloWorldTiles_psgcompr                                      0005A8 GR
+  0 _BallEight_psgcompr                                            000149 GR
+  0 _BallMirror_psgcompr                                           000268 GR
+  0 _BallNew_psgcompr                                              0002B2 GR
+  0 _BallNoChecks_psgcompr                                         0003D4 GR
+  0 _BallTileMap_bin                                               000494 GR
+  0 _Ball_bin                                                      000000 GR
+  0 _Ball_psgcompr                                                 000020 GR
+  0 _Ball_stmcompr                                                 00013F GR
+  0 _DemoBG_bin                                                    0004B4 GR
+  0 _DemoBG_psgcompr                                               0004D4 GR
+  0 _DemoBG_stmcompr                                               000968 GR
+  0 _HelloWorldPalette_bin                                         000B2F GR
+  0 _HelloWorldTilemap_stmcompr                                    000B4F GR
+  0 _HelloWorldTiles_psgcompr                                      000BEB GR
+  0 _Nole_bin                                                      000FF3 GR
+  0 _Nole_psgcompr                                                 001013 GR
+  0 _gator_bin                                                     0009A0 GR
+  0 _gator_psgcompr                                                0009C0 GR
 
 
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80 / R800)                          Page 2
@@ -20,7 +32,7 @@ Hexadecimal [24-Bits]
 
 Area Table
 
-   0 _CODE                                      size    9B0   flags    0
+   0 _CODE                                      size   1187   flags    0
    1 _DATA                                      size      0   flags    0
    2 _INITIALIZED                               size      0   flags    0
    3 _DABS                                      size      0   flags    8
