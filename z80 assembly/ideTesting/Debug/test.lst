@@ -1,0 +1,84 @@
+Zilog eZ80 Macro Assembler Version 4.3 (19073001)30-Nov-24     18:14:35     page:   1
+
+
+PC     Object              I  Line    Source 
+                           A     1    .org %0
+                           A     2    
+                           A     3    ;load int into all general purpose registers (A
+000000 0E0A                A     4    LD C, 10d
+000002 1E0B                A     5    LD E, Bh
+000004 2E12                A     6    LD L, 12h
+000006 0613                A     7    LD B, 13h
+000008 1614                A     8    LD D, 14h
+00000A 2615                A     9    LD H, 15h
+                           A    10    
+00000C ED79                A    11    OUT (C),A
+                           A    12    
+                           A    13    ;store address $9020 into B and C
+00000E 0690                A    14    LD B, 90h
+000010 0E20                A    15    LD C, 20h
+                           A    16    
+                           A    17    ;store int in accumulator reg (A) to then be st
+000012 3E05                A    18    LD A, 5h
+000014 02                  A    19    LD (BC), A
+                           A    20    
+                           A    21    ;load load 1 into A then load int in $9020 back
+000015 3E01                A    22    LD A, 1h
+000017 0A                  A    23    LD A, (BC)
+                           A    24    ;LD E, (BC) <- invalid instruction - results in
+                           A    25    
+                           A    26    ;store address $9025 into HL
+000018 2690                A    27    LD H, 90h
+00001A 2E25                A    28    LD L, 25h
+                           A    29    
+                           A    30    ;store value in D to $9025 and then load the in
+00001C 72                  A    31    LD (HL), D
+00001D 5E                  A    32    LD E, (HL)
+                           A    33    
+                           A    34    ;add values in A and E which will be stored in 
+00001E 83                  A    35    ADD A, E
+                           A    36    
+                           A    37    ;Add int to value in A which will be stored in 
+00001F C603                A    38    ADD A, 3h
+                           A    39    
+                           A    40    ;Add value stored at $9025 to value in A which 
+000021 86                  A    41    ADD A, (HL)
+                           A    42    
+                           A    43    ;Subtract value in A by value at $9025
+000022 96                  A    44    SUB A, (HL)
+                           A    45    
+                           A    46    ;increment A
+000023 3C                  A    47    INC A
+                           A    48    
+                           A    49    ;increment HL and store A at $9026
+000024 34                  A    50    INC (HL)
+000025 77                  A    51    LD (HL), A
+                           A    52    
+                           A    53    ;decrement HL and load value at $9025 into A
+000026 35                  A    54    DEC (HL)
+000027 7E                  A    55    LD A, (HL)
+                           A    56    
+                           A    57    ;And value in A with $2
+000028 E602                A    58    AND 2h
+                           A    59    
+                           A    60    ;OR value in A with $3
+00002A F603                A    61    OR 3h
+                           A    62    
+                           A    63    ;exchange the address in HL to SP and then exch
+                           A    64    ;LD SP, HL
+                           A    65    ;LD SP, IY
+                           A    66    
+                           A    67    ;load IY into C 
+                           A    68    ;LD C, (IY)
+                           A    69    
+                           A    70    ;load IX + 4 into H
+                           A    71    ;LD H, (IX+4h)
+                           A    72    
+                           A    73    ;end loop
+00002C                     A    74    end:
+00002C C3 2C 00            A    75    JP end
+
+
+Errors: 0
+Warnings: 0
+Lines Assembled: 76
