@@ -1,0 +1,19 @@
+
+
+K:/Documents/CpE Design/A-Z80/host/zxspectrum_de1/pll.v
+
+Dec 05 11PM:53:34>: Error in CNX file format.
+
+Error messages are listed in file
+K:/Documents/CpE Design/A-Z80/host/zxspectrum_de1/pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+K:/Documents/CpE Design/A-Z80/host/zxspectrum_de1/pll.v
+
+Dec 06 12AM:17:08>: Error in CNX file format.
+
+Error messages are listed in file
+K:/Documents/CpE Design/A-Z80/host/zxspectrum_de1/pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)

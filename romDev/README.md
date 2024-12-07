@@ -1,4 +1,4 @@
-# Emulator Work
+# Emulator ROM Implementation
 As part of our prototype we are developing a simple test ROM to run a "Hello World" demo program on any Game Gear Emulator. We are using DevkitSMS for this which is a library that allows c code to be compiled into Sega Master System and Sega Game Gear files. This process involves using a tool called BMP2Tile to turn a BMP image into readable tile and palette formats. The program uses the library's SMS_loadPSGaidencompressedTiles(), SMS_loadSTMcompresssedTileMap, GG_loadBGPalette(), SMS_displayOn(), and SMS_waitForVBlank() methods to load and display the "Hello World" background. SMS_AddSprite() is used to display a sprite of a Gator head which polls input from the directional pad and buttons to move around and change its image.
 
 ### How to use

@@ -1,0 +1,26 @@
+Assembly project set up for ez80Acclaim ide:
+Create project:
+1. Go to file and select new project
+2. Select the path where the project will be created
+3. Select "Assembly Only" for Project Type
+4. Select "eZ80" for CPU Family
+5. Select "eZ80190" for CPU
+6. Select "Executable" for Build Type
+7. Click Continue
+8. Check eZ80DevPlatform_190_RAM. Leave the rest as default and click Next
+9. Change the memory and storage blocks to the desired ranges and click finish
+
+Add files to project:
+- Select Project->Add Files...
+- Select the file to be added and click add. Can create a blank .asm file to be added. (Haven't found a way to create new files with the ide)
+- The new file will be under the "Assembly Only Project Files" directory
+
+Debugging with the ide:
+1. Build the code (Make sure it is built, not assembled. Only assembling the file will lead to an error when debugging).
+2. Click go
+3. Add breakpoints by cliking beside a line of code then clicking the Add/Remove breakpoint button
+4. Click restart
+5. Use step buttons to step through the code
+
+Debugging windows:
+-To access the debugging windows go to View->Debug Windows
