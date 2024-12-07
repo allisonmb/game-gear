@@ -9,6 +9,7 @@ This code was created to ensure the majority of Z80 instructions worked with the
 ## Car game
 This code was implemented to show that a game can be made with Z80 assembly alone. This game is run in the ZX Spin emulator. To run the code in the emulator load it at address 33000 (See Running the emulator below). The left control is space and the right control is left arrow key. The goal of the game is to avoid crashing the "car" into the walls. The main components of the code are keeping track of the score, displaying visuals, and the logic for the car and wall. A more detailed description of the program can be seen in the flow chart below.
 
+![alt text](https://github.com/allisonmb/game-gear/blob/main/z80%20assembly/z80GameDiagram.drawio.png)
 
 ## Assembly project set up for ez80Acclaim ide:
 ### Create project:
