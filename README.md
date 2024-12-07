@@ -1,4 +1,3 @@
 # Design Prototype
-## FPGA Implementation
-
+## [FPGA Implementation](A-Z80/)
 ## Emulator Implementation
