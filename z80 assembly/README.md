@@ -7,11 +7,12 @@ This code was created to practice z80 assembly and learn the ez80Acclaim IDE. Ma
 This code was created to ensure the majority of Z80 instructions worked with the ez80Acclaim IDE after issues with an online IDE (see bugs). This code makes use of 8-bit load, 16-bit load, 8-bit arithmetic, shift, rotate, call, jump, return, etc instructions. The code simply stores "SEGA Game Gear" in memory. However each character is calculated by using a combination of the instructions mentioned to ensure each instruction worked as intended. To ensure this, one instruction was added to the code at a time. Every time a new instruction was added, it was tested by running the code through the debugger and ensuring the registers and memory contained the intended value each time an instruction ran. 
 
 ## Car game
-This code was implemented to show that a game can be made with Z80 assembly alone. This game is run in the ZX Spin emulator. To run the code in the emulator load it at address 33000 (See Running the emulator below). The left control is space and the right control is left arrow key. The goal of the game is to avoid crashing the "car" into the walls. The main components of the code are keeping track of the score, displaying visuals, and the logic for the car and wall. A more detailed description of the program can be seen in the flow chart below.
+This code was implemented to show that a game can be made with Z80 assembly alone. This game is run in the ZX Spin emulator. To run the code in the emulator load it at address 33000 (See Running the emulator below). The left control is space and the right control is left arrow key. The goal of the game is to avoid crashing the "car" into the walls. The main components of the code are keeping track of the score, displaying visuals, and the logic for the car and wall. A more detailed description of the program can be seen in the flow chart below[1].
 
 ![alt text](https://github.com/allisonmb/game-gear/blob/main/z80%20assembly/z80GameDiagram.drawio.png)
 
 ## Assembly project set up for ez80Acclaim ide:
+- IDE download available at: https://www.zilog.com/index.php?option=com_zcm&task=sdlp
 ### Create project:
 1. Go to file and select new project
 2. Select the path where the project will be created
@@ -60,4 +61,7 @@ This code was implemented to show that a game can be made with Z80 assembly alon
 - The ZX Spin emulator will freeze and crash if code is edited while running an emulation
 - The car game needs to be modified to work on the FPGA. Currently it is set up to communicate with the ZX Spin emulator which is written in BASIC. The FPGA implementation would need to be written to communicate with its hardware instead of the emulator.
 - The car game controls are not intuitive. Currently to move left space is used and to move right the left arrow key is used
-- Do NOT use online IDE available at https://github.com/IgnacioSearles/Z80-AssemblerAndEmulator. This IDE does not implement input or output instructions and 16 bit arithmetic instructions are bugged. 
+- Do NOT use online IDE available at https://github.com/IgnacioSearles/Z80-AssemblerAndEmulator. This IDE does not implement input or output instructions and 16 bit arithmetic instructions are bugged.
+
+## References
+[1]  J. Kingsman. “Tutorial: ZX Spectrum Machine Code Game in 30 Minutes.” Chutney. Available: https://chuntey.wordpress.com/2010/01/12/tutorial-zx-spectrum-machine-code-game-30-minutes/
