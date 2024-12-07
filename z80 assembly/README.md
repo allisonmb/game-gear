@@ -1,13 +1,13 @@
 # Z80 Assembly
 
-## IDE Testing code
-This code was created to practice z80 assembly and learn the ez80Acclaim IDE. Mainly uses arithmetic and load instructions. Does not have much functionality
+## IDE Testing code 
+[This code](ideTesting/test.asm) was created to practice z80 assembly and learn the ez80Acclaim IDE. Mainly uses arithmetic and load instructions. Does not have much functionality
 
 ## Test code
-This code was created to ensure the majority of Z80 instructions worked with the ez80Acclaim IDE after issues with an online IDE (see bugs). This code makes use of 8-bit load, 16-bit load, 8-bit arithmetic, shift, rotate, call, jump, return, etc instructions. The code simply stores "SEGA Game Gear" in memory. However each character is calculated by using a combination of the instructions mentioned to ensure each instruction worked as intended. To ensure this, one instruction was added to the code at a time. Every time a new instruction was added, it was tested by running the code through the debugger and ensuring the registers and memory contained the intended value each time an instruction ran. 
+[This code](TestCode/sega_print.asm) was created to ensure the majority of Z80 instructions worked with the ez80Acclaim IDE after issues with an online IDE (see bugs). This code makes use of 8-bit load, 16-bit load, 8-bit arithmetic, shift, rotate, call, jump, return, etc instructions. The code simply stores "SEGA Game Gear" in memory. However each character is calculated by using a combination of the instructions mentioned to ensure each instruction worked as intended. To ensure this, one instruction was added to the code at a time. Every time a new instruction was added, it was tested by running the code through the debugger and ensuring the registers and memory contained the intended value each time an instruction ran. 
 
 ## Car game
-This code was implemented to show that a game can be made with Z80 assembly alone. This game is run in the ZX Spin emulator. To run the code in the emulator load it at address 33000 (See Running the emulator below). The left control is space and the right control is left arrow key. The goal of the game is to avoid crashing the "car" into the walls. The main components of the code are keeping track of the score, displaying visuals, and the logic for the car and wall. A more detailed description of the program can be seen in the flow chart below[1].
+[This code](carGame/carGame.asm) was implemented to show that a game can be made with Z80 assembly alone. This game is run in the ZX Spin emulator. To run the code in the emulator load it at address 33000 (See Running the emulator below). The left control is space and the right control is left arrow key. The goal of the game is to avoid crashing the "car" into the walls. The main components of the code are keeping track of the score, displaying visuals, and the logic for the car and wall. A more detailed description of the program can be seen in the flow chart below[1].
 
 ![alt text](https://github.com/allisonmb/game-gear/blob/main/z80%20assembly/z80GameDiagram.drawio.png)
 
