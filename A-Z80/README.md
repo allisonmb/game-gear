@@ -21,5 +21,7 @@ Towards our goal of a realistic Game Gear representation, we intend to use an FP
 - KEY1 will act as a non-maskable interrupt, spamming "IM2" and then continuing after KEY1 is released.
 - The UART output can be visualized using a DAD board with WaveForms (through the 'protocol' menu), and will be on GPIO pin 6, with a baud rate of 115200, 8 data bits, 1 stop bit, no parity, and a CR LF as the end of line.
 
+![UART Output](<README Images/UART.png>)
+
 ## Known Bugs/History
 Synthesis can be a bit finicky in Quartus, and so some errors may appear on different versions of Quartus or with different FPGAs other than the DE10 Lite. This code will not run on boards that are not in the MAX 10 family without a decent amount of modification. Getting the UART code to properly output was challenging, but I was finally able to do so after significant trouble with porting from MAX II (which modern versions of Quartus do not support and cannot convert) to MAX 10. Ultimately, I had to delete the IP files and recreate them with as similar of settings and initializations as I could, and it took some trial and error. Thus, porting to other families may be similarly difficult. When starting Quartus, it may prompt to overwrite or update the database file from another version of Quartus, and this is normal and can be accepted.
