@@ -1,9 +1,5 @@
 # game-gear
 
-# Design Prototype Reame
-
-# Pre Alpha Readme
-
 ## Architecture
 ### PCBs and Hardware Overview
 The game gear is made up of 3 PCB boards: The back board (or main board), DC-DC converter board, and sound board. The majority of components are contained on the back board, including the main memory (IC3), video memory (IC2), and ASIC (IC1). The ASIC chip is owned by Sega, and thus must be recreated. [1]
