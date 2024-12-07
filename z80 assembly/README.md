@@ -51,6 +51,10 @@
 - Type: `100 t ctrl-shift l <address of code start>` and press enter
 - Type: `r` and press enter
 
+## Difficulties 
+  Finding an IDE environment to develop z80 assembly was difficult since the z80 processor is obsolete and Zilog no longer provides a development environment for it. Initially, 3 different online assemblers were tested however none properly ran a load instruction. Then, we discovered the online IDE available at https://github.com/IgnacioSearles/Z80-AssemblerAndEmulator[2]. This seemed to work fine initially and we started to write the [sega_print.asm](TestCode/sega_print.asm) code. Initially, we only coded with 8-bit load and arithmetic instructions which worked fine in this IDE. To test that they worked fine, we debugged line by line to ensure the values in the registers and memory were as expected. However, we ran into issues when we tried to implement 16-bit load and arithmetic instructions which threw a compiler error despite matching the syntax from the z80 cpu manual[3]. We also tried to implement input and output instructions, however both threw compiler errors as well. When checking the documentation of the online IDE closely, we discovered documentation describing the instructions used in the IDE which did not include the input and output instructions. Even though this documentation stated 16-bit load and arithmetic instructions should work, we decided to look for a different IDE since we needed to compile input and output instructions [2]. 
+  After another long period of searching, we found the eZ80 chip is backwards compatable with the z80 [4]. As a result, we tried the official Zilog development IDE for the eZ80 called ez80Acclaim, hoping it would build and debug z80 assembly. Input, output, and 16-bit load and arithmetic instructions worked without errors in ez80Acclaim which led us to continue developing in it. There were however a couple issues with this IDE, described in the "Bugs and issues" section below, that we took a while attempting to find a solution, however decided to continue developing the code since both issues could be easily tested when running on the FPGA.
+
 ## Bugs and issues
 - In sega_print.asm, when returning from the called function (get65h) the value stored in the C register remains even after returning
 - in ez80Acclaim IDE must write hex values as xh and cannot write them as $x. This differs in other IDEs.
@@ -61,7 +65,7 @@
 - The ZX Spin emulator will freeze and crash if code is edited while running an emulation
 - The car game needs to be modified to work on the FPGA. Currently it is set up to communicate with the ZX Spin emulator which is written in BASIC. The FPGA implementation would need to be written to communicate with its hardware instead of the emulator.
 - The car game controls are not intuitive. Currently to move left space is used and to move right the left arrow key is used
-- Do NOT use online IDE available at https://github.com/IgnacioSearles/Z80-AssemblerAndEmulator. This IDE does not implement input or output instructions and 16 bit arithmetic instructions are bugged.
+- Do NOT use online IDE available at https://github.com/IgnacioSearles/Z80-AssemblerAndEmulator. This IDE does not implement input or output instructions and 16 bit arithmetic instructions are bugged [2].
 
 ## References
 [1]  J. Kingsman. “Tutorial: ZX Spectrum Machine Code Game in 30 Minutes.” Chutney. Available: https://chuntey.wordpress.com/2010/01/12/tutorial-zx-spectrum-machine-code-game-30-minutes/
