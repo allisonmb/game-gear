@@ -1,0 +1,124 @@
+Zilog eZ80 Macro Assembler Version 4.3 (19073001)02-Dec-24     10:36:54     page:   1
+
+
+PC     Object              I  Line    Source 
+                           A     1    .org %0
+                           A     2    
+                           A     3    ;Load the address $9020 into the IX register - 
+000000 DD212090            A     4    LD IX, 9020h
+                           A     5    
+                           A     6    ;Store 0x53 at $9020 and increment IX - will be
+000004 DD360053            A     7    LD (IX+0), 53h
+000008 DD23                A     8    INC IX
+                           A     9    
+                           A    10    ;Add 0x15 to 0x30 and store at $9021
+                           A    11    ;The A reg is the default accumulator register 
+00000A 3E15                A    12    LD A, 15h
+00000C C630                A    13    ADD A, 30h
+00000E DD7700              A    14    LD (IX+0), A
+000011 DD23                A    15    INC IX
+                           A    16    
+                           A    17    ;Subtract 0x9 from 0x50 and store at $9022
+000013                     A    18    get47h:
+000013 3E50                A    19    LD A, 50h
+000015 D609                A    20    SUB 9h
+000017 DD7700              A    21    LD (IX+0), A
+00001A DD23                A    22    INC IX
+                           A    23    
+                           A    24    ;load the value at $902A and check if that valu
+00001C 212A90              A    25    LD HL, 902Ah
+00001F 56                  A    26    LD D, (HL)
+000020 BA                  A    27    CP D
+000021 CA 64 00            A    28    JP Z, get47hReturn
+                           A    29    
+                           A    30    
+                           A    31    
+                           A    32    ;OR 0x40 with 0x01 and store at $9023
+000024 3E40                A    33    LD A, 40h
+000026 F601                A    34    OR 1h
+000028 DD7700              A    35    LD (IX+0), A
+00002B DD23                A    36    INC IX
+                           A    37    
+                           A    38    ;exhange the AF and AF' registers to store 0x41
+00002D 08                  A    39    EX AF, AF'
+                           A    40    
+                           A    41    ;AND 0xEC with 0x20 and store at $9024
+00002E 3EEC                A    42    LD A, ECh
+000030 E620                A    43    AND 20h
+000032 DD7700              A    44    LD (IX+0), A
+000035 DD23                A    45    INC IX
+                           A    46    
+                           A    47    ;XOR 0x41 with 0x6 and store at $9025 - retriev
+000037 08                  A    48    EX AF, AF'
+000038 EE06                A    49    XOR 6h
+00003A DD7700              A    50    LD (IX+0), A
+00003D DD23                A    51    INC IX
+                           A    52    
+                           A    53    ;Perform logical right shit on 0xC3 and store a
+00003F 0EC3                A    54    LD C, C3h
+000041 CB39                A    55    SRL C
+000043 DD7100              A    56    LD (IX+0), C
+000046 DD23                A    57    INC IX
+                           A    58    
+                           A    59    ;Perform rotate left on 0x36 and store at $9027
+000048 0E36                A    60    LD C, 36h
+00004A CB11                A    61    RL C
+00004C DD7100              A    62    LD (IX+0), C
+00004F DD23                A    63    INC IX
+                           A    64    
+                           A    65    ;Call get65h function and get the returned valu
+000051 CD 87 00            A    66    CALL get65h
+000054 D1                  A    67    POP DE
+000055 DD7300              A    68    LD (IX+0), E
+000058 DD23                A    69    INC IX
+                           A    70    
+                           A    71    ;Set bit 5 in register B and store value in B a
+00005A CBE8                A    72    SET 5, B
+00005C DD7000              A    73    LD (IX+0), B
+00005F DD23                A    74    INC IX
+                           A    75    
+                           A    76    ;Jump to get47h function in the middle of the c
+000061 C3 13 00            A    77    JP get47h
+000064                     A    78    get47hReturn:
+                           A    79    
+                           A    80    ;Retrieve the value 0x65 from $9028 in memory a
+000064 2690                A    81    LD H, 90h
+000066 2E28                A    82    LD L, 28h
+000068 56                  A    83    LD D, (HL)
+000069 DD7200              A    84    LD (IX+0), D
+                           A    85    
+                           A    86    ;Get value from imput instruction - will be FF 
+00006C 0E07                A    87    LD C, 7h
+00006E ED50                A    88    IN D, (C)
+                           A    89    
+                           A    90    ;Reset the appropriate bits in D to change FF t
+000070 CBBA                A    91    RES 7, D
+000072 CBA2                A    92    RES 4, D
+000074 CB9A                A    93    RES 3, D
+000076 CB92                A    94    RES 2, D
+000078 CB8A                A    95    RES 1, D
+00007A DD7201              A    96    LD  (IX+1), D
+                           A    97    
+                           A    98    ;Perform arithmetic left shift on 0xD9 and stor
+00007D 0EB9                A    99    LD C, B9h
+00007F CB21                A   100    SLA C
+000081 DD7102              A   101    LD (IX+2), C
+                           A   102    
+000084                     A   103    end:
+                           A   104    
+000084 C3 84 00            A   105    JP end
+                           A   106    
+000087                     A   107    get65h:
+                           A   108    	;store value in sp
+000087 E1                  A   109    	POP HL
+                           A   110    	;store 65h in C and push onto stack
+000088 0E65                A   111    	LD C, 65h
+00008A C5                  A   112    	PUSH BC
+                           A   113    	;push the original sp onto the stack
+00008B E5                  A   114    	PUSH HL
+00008C C9                  A   115    	RET
+
+
+Errors: 0
+Warnings: 0
+Lines Assembled: 116
