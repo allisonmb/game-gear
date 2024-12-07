@@ -2,7 +2,7 @@
 Towards our goal of a realistic Game Gear representation, we intend to use an FPGA to replicate the Z80 and other boards such as the proprietary sound board. The [A-Z80](https://github.com/gdevic/A-Z80) does this, although it is somewhat outdated and does not have all of the functionality we need. However, it provides a full implementation of the Z80 along with some testing files. The implementation had to be updated from one that works on MAX II hardware to modern MAX 10 hardware (which is a jump from Quartus 13.0 to Quartus 23.1). As a result, the RAM and PLL (for the clock) had to be recreated in modern Quartus. Ultimately, this code is capable of converting a Z80 assembly file into a machine code memory initialization, synthesizing a memory and UART module, and then programming a DE10 Lite to replicate a Z80 that is running assembly code. The [provided test case](tools/zmac/hello_world.asm) is a "Hello World" implementation, which outputs printed statements over UART (in this case "CpE Design").
 
 ## How To Compile Assembly
-1. Create and develop a Z80 assembly file in the [zmac folder](tools/zmac).
+1. Create and develop a Z80 assembly file in the [zmac folder](tools/zmac) (or use the provided [hello_world.asm](tools/zmac/hello_world.asm).
 2. Drag and drop the created assembly file onto [make_fpga.bat](tools/zmac/make_fpga.bat).
 3. Proceed with synthesizing and programming below.
 
