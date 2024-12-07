@@ -3,8 +3,9 @@ As part of our prototype we are developing a simple test ROM to run a "Hello Wor
 
 ### How to use
 1. Install Sega Game Gear Emulator, Fusion recommended (https://www.emulator-zone.com/doc.php/genesis/fusion.html)
-2. Click File->Load Game Gear ROM (CTRL-A) and load "compileTest.gg"
-3. Use arrow keys and 'A' to control program
+2. Run makefile to compile code (if not already compiled)
+3. In Fusion click File->Load Game Gear ROM (CTRL-A) and load "compileTest.gg"
+4. Use arrow keys and 'A' to control program
 
 ### Setting Up the external controller
 1. Program "/Keyboard/Keyboard.ino" to Arduino
