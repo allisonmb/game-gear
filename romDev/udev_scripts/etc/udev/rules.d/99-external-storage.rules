@@ -1,0 +1,2 @@
+ACTION=="add", KERNEL=="sd[a-z][0-9]", SUBSYSTEMS=="usb", RUN+="/bin/bash -c 'echo $(date) - Running script for %k >> /tmp/udev_script_log.txt; systemctl --no-block start mount-cart@%k.service >> /tmp/udev_script_output.txt 2>&1'"
+ACTION=="remove", KERNEL=="sd[a-z][0-9]", SUBSYSTEMS=="usb", RUN+="/bin/bash -c '/home/mocha/kill_emu.sh'"
