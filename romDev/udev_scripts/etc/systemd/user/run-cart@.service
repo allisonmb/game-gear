@@ -1,0 +1,12 @@
+[Unit]
+Description=Service for %i
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+Restart=no
+ExecStart=/home/mocha/run_gg_script.sh /dev/%i
+
+[Install]
+WantedBy=graphical-session.target
