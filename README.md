@@ -5,4 +5,5 @@ Each aspect of the project is linked below, with README files indicating their f
 - [Emulator ROM Implementation](romDev/)
 - [FPGA Implementation](A-Z80/)
 - [Z80 Assembly Test Code](<z80 assembly/>)
+- [Cartridge Auto Launch Scripts](romDev/udev_scripts/)
 
