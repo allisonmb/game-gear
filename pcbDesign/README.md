@@ -1,11 +1,11 @@
-#PCB Design and Schematics
+# PCB Design and Schematics
 There are 3 PCBs: the left, right, and center PCBs. These are connected to eachother with header pins. Note: The "main PCB" is an old version which was before the PCB was split into 3. "GG PCB" is a remake of the original Game Gear PCB from https://oshwlab.com/maarten040476_3348/sega-game-gear-837-7996.
 ## Currently Implemented
 ### Center PCB
 The center PCB connects to the left and right PCBs. 
 The center PCB contains:
-- [Raspberry Pi Zero W]
-- [3.5 Waveshare HDMI Screen]
+- [Raspberry Pi Zero W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/)
+- [3.5 Waveshare HDMI Screen](https://www.waveshare.com/wiki/3.5inch_HDMI_LCD)
 
 ### Left PCB
 The left PCB contains:
@@ -22,7 +22,7 @@ The right PCB contains:
 
 ### Left PCB
 - Volume Dial - Connected to rotary encoder that can be interpreted by the Raspberry Pi to change the system's volume level.
-- Audio Amplifier - Connected to the Raspberry Pi and is capable of converting digital sound to anologue to go to a speaker. Currently looking at using []
+- Audio Amplifier - Connected to the Raspberry Pi and is capable of converting digital sound to anologue to go to a speaker. Currently looking at using [MAX98357A](https://www.adafruit.com/product/3006)
 
 ### Right PCB
 The right PCB contains:
