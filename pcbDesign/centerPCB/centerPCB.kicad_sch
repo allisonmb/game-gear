@@ -4965,7 +4965,7 @@
 		)
 		(uuid "fcac052e-4403-4a0b-92f8-72614ebf72ca")
 	)
-	(label "Volume_DT"
+	(label "Volume_B"
 		(at 121.92 138.43 0)
 		(effects
 			(font
@@ -5005,7 +5005,7 @@
 		)
 		(uuid "0da6d8be-dbac-41cd-8e39-759cb7180419")
 	)
-	(label "Clk"
+	(label "Brightness_B"
 		(at 60.96 121.92 0)
 		(effects
 			(font
@@ -5065,7 +5065,7 @@
 		)
 		(uuid "37307f75-7988-4e72-bdff-bfa30ae1554c")
 	)
-	(label "Clk"
+	(label "Volume_B"
 		(at 173.99 105.41 0)
 		(effects
 			(font
@@ -5235,7 +5235,7 @@
 		)
 		(uuid "7fcb5953-9dc4-450d-bf8b-698dac243f94")
 	)
-	(label "Clk"
+	(label "Volume_B"
 		(at 238.76 105.41 0)
 		(effects
 			(font
@@ -5285,7 +5285,7 @@
 		)
 		(uuid "98c17bda-d82a-48a6-8b57-aca903066dff")
 	)
-	(label "Brightness_DT"
+	(label "Brightness_A"
 		(at 60.96 124.46 0)
 		(effects
 			(font
@@ -5355,7 +5355,7 @@
 		)
 		(uuid "c81def10-56f5-459f-a312-8cc7100a3bbc")
 	)
-	(label "Brightness_DT"
+	(label "Brightness_A"
 		(at 121.92 133.35 0)
 		(effects
 			(font
@@ -5395,7 +5395,7 @@
 		)
 		(uuid "e7defbae-2cc3-479f-bd0d-34ef6d86da18")
 	)
-	(label "Volume_DT"
+	(label "Volume_A"
 		(at 238.76 110.49 0)
 		(effects
 			(font
