@@ -1268,6 +1268,16 @@
 	)
 	(wire
 		(pts
+			(xy 123.19 66.04) (xy 138.43 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "009187b2-030d-428c-aff9-67a460c018f4")
+	)
+	(wire
+		(pts
 			(xy 26.67 64.77) (xy 26.67 68.58)
 		)
 		(stroke
@@ -1328,16 +1338,6 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 60.96) (xy 138.43 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "708458f9-0be1-4854-9138-9fda47e1b245")
-	)
-	(wire
-		(pts
 			(xy 26.67 68.58) (xy 26.67 76.2)
 		)
 		(stroke
@@ -1375,16 +1375,6 @@
 			(type default)
 		)
 		(uuid "90146ab5-dd06-4b8c-8d16-e4cf5e37923e")
-	)
-	(wire
-		(pts
-			(xy 123.19 66.04) (xy 138.43 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "94eb0620-50d9-4731-8281-f360194a4261")
 	)
 	(wire
 		(pts
@@ -1485,6 +1475,16 @@
 			(type default)
 		)
 		(uuid "bff2c497-331d-43e4-a8bb-02330b0fea02")
+	)
+	(wire
+		(pts
+			(xy 123.19 60.96) (xy 138.43 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dbbadf47-b5fb-479b-ae7a-598a333e7dda")
 	)
 	(wire
 		(pts
@@ -1614,7 +1614,7 @@
 		(uuid "5e61e9ac-d43a-44f6-9248-83cd4de79739")
 	)
 	(label "1"
-		(at 138.43 66.04 0)
+		(at 138.43 60.96 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1625,7 +1625,7 @@
 		(uuid "ba8beaa7-4bae-499d-8c55-aaaefe2df080")
 	)
 	(label "Start"
-		(at 138.43 60.96 0)
+		(at 138.43 66.04 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
