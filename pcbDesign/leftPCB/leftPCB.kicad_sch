@@ -3053,16 +3053,6 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 152.4) (xy 57.15 152.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1276974c-2fdf-4b6a-84f6-41750000cc53")
-	)
-	(wire
-		(pts
 			(xy 130.81 119.38) (xy 139.7 119.38)
 		)
 		(stroke
@@ -3100,6 +3090,16 @@
 			(type default)
 		)
 		(uuid "26c8c057-c59e-498a-bb41-ead3b5c1d7af")
+	)
+	(wire
+		(pts
+			(xy 44.45 154.94) (xy 57.15 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2991db4d-a2b4-4459-9138-51eedfa21993")
 	)
 	(wire
 		(pts
@@ -3190,16 +3190,6 @@
 			(type default)
 		)
 		(uuid "71731d74-3e4a-49a0-b322-3e19a68bdef1")
-	)
-	(wire
-		(pts
-			(xy 44.45 154.94) (xy 57.15 154.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "72585570-6503-443d-9627-808b6062a5bf")
 	)
 	(wire
 		(pts
@@ -3531,6 +3521,16 @@
 		)
 		(uuid "f6ddc0a9-fd14-4cfa-9f58-49b0e1c205b8")
 	)
+	(wire
+		(pts
+			(xy 44.45 152.4) (xy 57.15 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7ce68b7-57cf-4f08-ba5a-87d3550fc696")
+	)
 	(label "Power_LED"
 		(at 148.59 97.79 0)
 		(effects
@@ -3742,7 +3742,7 @@
 		(uuid "d596fa9a-49a5-49fb-aefd-576832d03cab")
 	)
 	(label "Speaker_Neg"
-		(at 44.45 154.94 0)
+		(at 44.45 152.4 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3752,7 +3752,7 @@
 		(uuid "dda1a9f1-571d-4db2-b2df-ecaca27a0b4a")
 	)
 	(label "Speaker_Pos"
-		(at 44.45 152.4 0)
+		(at 44.45 154.94 0)
 		(effects
 			(font
 				(size 1.27 1.27)
