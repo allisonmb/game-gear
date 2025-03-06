@@ -162,7 +162,7 @@ _loadAssets::
 	ld	hl, #_DemoBG_bin
 	call	_GG_loadBGPalette
 ;compileTest.c:42: SMS_loadPSGaidencompressedTiles(gator_psgcompr, GATOR_TILES);
-	ld	de, #0x6000
+	ld	de, #0x5f40
 	ld	hl, #_gator_psgcompr
 	call	_SMS_loadPSGaidencompressedTilesatAddr
 ;compileTest.c:44: GG_loadSpritePalette(gator_bin);
@@ -255,7 +255,7 @@ _moveBall::
 	or	a, a
 	jp	NZ, 00116$
 ;compileTest.c:65: SMS_loadPSGaidencompressedTiles(Nole_psgcompr, GATOR_TILES);
-	ld	de, #0x6000
+	ld	de, #0x5f40
 	ld	hl, #_Nole_psgcompr
 	call	_SMS_loadPSGaidencompressedTilesatAddr
 ;compileTest.c:66: GG_loadSpritePalette(Nole_bin);
@@ -264,7 +264,7 @@ _moveBall::
 	jp	00117$
 00116$:
 ;compileTest.c:69: SMS_loadPSGaidencompressedTiles(gator_psgcompr, GATOR_TILES);
-	ld	de, #0x6000
+	ld	de, #0x5f40
 	ld	hl, #_gator_psgcompr
 	call	_SMS_loadPSGaidencompressedTilesatAddr
 ;compileTest.c:70: GG_loadSpritePalette(gator_bin);
@@ -333,15 +333,17 @@ _drawBall::
 	ld	h, #0x00
 ;	spillPairReg hl
 ;	spillPairReg hl
-	ld	e, l
+	ld	a, l
 	ld	d, h
-	ex	de, hl
-	add	hl, hl
-	add	hl, hl
-	ex	de, hl
-	ld	a, d
-	inc	a
-	ld	d, a
+	add	a, a
+	rl	d
+	add	a, a
+	rl	d
+	add	a, #0xfa
+	ld	e, a
+	jp	NC, 00133$
+	inc	d
+00133$:
 	ld	a, e
 	add	a, -4 (ix)
 	ld	e, a

@@ -3,6 +3,23 @@
 ;Load the address $9020 into the IX register - one of the two index registers
 LD IX, 9020h
 
+;load 0's into memory to better show in demo the memory data changing
+LD (IX+0), 0h
+LD (IX+1), 0h
+LD (IX+2), 0h
+LD (IX+3), 0h
+LD (IX+4), 0h
+LD (IX+5), 0h
+LD (IX+6), 0h
+LD (IX+7), 0h
+LD (IX+8), 0h
+LD (IX+9), 0h
+LD (IX+10), 0h
+LD (IX+11), 0h
+LD (IX+12), 0h
+LD (IX+13), 0h
+
+
 ;Store 0x53 at $9020 and increment IX - will be incrementing IX every time value is stored to memory
 LD (IX+0), 53h
 INC IX
