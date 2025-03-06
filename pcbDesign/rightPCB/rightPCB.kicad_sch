@@ -2011,16 +2011,6 @@
 		(uuid "54bb5585-2fc0-43a0-8b9b-c86c071943bc")
 	)
 	(label "2"
-		(at 138.43 63.5 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "5b2233ef-a266-4cec-b1ea-bca48c6c2d4c")
-	)
-	(label "2"
 		(at 40.64 66.04 0)
 		(effects
 			(font
@@ -2040,7 +2030,7 @@
 		)
 		(uuid "68f4df80-b492-4833-84dc-7b6de3e32a52")
 	)
-	(label "1"
+	(label "Start"
 		(at 138.43 60.96 0)
 		(effects
 			(font
@@ -2048,9 +2038,19 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ba8beaa7-4bae-499d-8c55-aaaefe2df080")
+		(uuid "af0a2793-c036-4f03-86af-38d5a6c62cab")
 	)
-	(label "Start"
+	(label "2"
+		(at 138.43 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e5dddcb3-db8d-4f3b-8f1c-61e2187ed9f1")
+	)
+	(label "1"
 		(at 138.43 66.04 0)
 		(effects
 			(font
@@ -2058,7 +2058,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "c62c6fda-bae4-45d6-a1c7-89929b2dd35d")
+		(uuid "f5318526-3136-4ebb-81fd-188ba10c7010")
 	)
 	(symbol
 		(lib_id "Device:RotaryEncoder")
