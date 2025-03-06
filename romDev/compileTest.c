@@ -2,7 +2,7 @@
 #include "assets.h"
 
 #define SPLASH_TILES 0
-#define GATOR_TILES 256
+#define GATOR_TILES 250
 unsigned char BallX, BallY, logo, release;
 
 void initGame (void);

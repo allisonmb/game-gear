@@ -199,7 +199,35 @@
 <breakpoint temporary="false" enabled="true" >
 <line-number>105</line-number>
 <pathname>C:\Users\Allison\Desktop\UF\Year 4 Semester 1\Senior Design\Project\game-gear\Demo\sega_print.asm</pathname>
-<address>132</address>
+<address>0</address>
+<command></command>
+<preserve-type>0</preserve-type>
+</breakpoint>
+<breakpoint temporary="false" enabled="true" >
+<line-number>42</line-number>
+<pathname>C:\Users\barke\Documents\Computer Engineering Design\game-gear\z80 assembly\TestCode\sega_print.asm</pathname>
+<address>84</address>
+<command></command>
+<preserve-type>0</preserve-type>
+</breakpoint>
+<breakpoint temporary="false" enabled="true" >
+<line-number>24</line-number>
+<pathname>C:\Users\barke\Documents\Computer Engineering Design\game-gear\z80 assembly\TestCode\sega_print.asm</pathname>
+<address>60</address>
+<command></command>
+<preserve-type>0</preserve-type>
+</breakpoint>
+<breakpoint temporary="false" enabled="true" >
+<line-number>71</line-number>
+<pathname>C:\Users\barke\Documents\Computer Engineering Design\game-gear\z80 assembly\TestCode\sega_print.asm</pathname>
+<address>119</address>
+<command></command>
+<preserve-type>0</preserve-type>
+</breakpoint>
+<breakpoint temporary="false" enabled="true" >
+<line-number>122</line-number>
+<pathname>C:\Users\barke\Documents\Computer Engineering Design\game-gear\z80 assembly\TestCode\sega_print.asm</pathname>
+<address>188</address>
 <command></command>
 <preserve-type>0</preserve-type>
 </breakpoint>

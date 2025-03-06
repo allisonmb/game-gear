@@ -23,6 +23,19 @@ Symbol Table
   0 _HelloWorldTiles_psgcompr                                      000BEB GR
   0 _Nole_bin                                                      000FF3 GR
   0 _Nole_psgcompr                                                 001013 GR
+  0 _Numbers_bin                                                   001187 GR
+  0 _Numbers_psgcompr                                              00119D GR
+  0 _Spritesheet_bin                                               001439 GR
+  0 _Spritesheet_psgcompr                                          001459 GR
+  0 _TestFailed__stmcompr                                          0019F8 GR
+  0 _TestFailed_bin                                                001A97 GR
+  0 _TestFailed_psgcompr                                           001AB7 GR
+  0 _Testing1_bin                                                  0027E9 GR
+  0 _Testing1_psgcompr                                             002809 GR
+  0 _Testing1_stmcompr                                             002BC1 GR
+  0 _TestingComplete_bin                                           002C17 GR
+  0 _TestingComplete_psgcompr                                      002C1D GR
+  0 _TestingComplete_stmcompr                                      002DA4 GR
   0 _gator_bin                                                     0009A0 GR
   0 _gator_psgcompr                                                0009C0 GR
 
@@ -32,7 +45,7 @@ Hexadecimal [24-Bits]
 
 Area Table
 
-   0 _CODE                                      size   1187   flags    0
+   0 _CODE                                      size   2DDA   flags    0
    1 _DATA                                      size      0   flags    0
    2 _INITIALIZED                               size      0   flags    0
    3 _DABS                                      size      0   flags    8

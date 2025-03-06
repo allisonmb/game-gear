@@ -3,14 +3,14 @@ SDCC = sdcc
 IHX2SMS = ihx2sms
 CFLAGS = -c -mz80 --no-peep -DTARGET_GG
 #CFLAGS = -c -mz80 --no-peep 
-LFLAGS = -o subOutput/compileTest.ihx -mz80 --no-std-crt0 --data-loc 0xC000
+LFLAGS = -o subOutput/automatic.ihx -mz80 --no-std-crt0 --data-loc 0xC000
 CRT0 = crt0/crt0_sms.rel
 LIB = SMSlib/SMSlib_GG.lib
 #LIB = SMSlib/SMSlib.lib
-SRC = compileTest.c assets.c
-OBJ = subOutput/compileTest.rel subOutput/assets.rel
-IHX = subOutput/compileTest.ihx
-GG = compileTest.gg
+SRC = automatic.c assets.c
+OBJ = subOutput/automatic.rel subOutput/assets.rel
+IHX = subOutput/automatic.ihx
+GG = automatic.gg
 #GG = compileTest.sms
 
 # Targets

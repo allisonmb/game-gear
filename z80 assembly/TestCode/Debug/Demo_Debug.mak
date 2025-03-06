@@ -26,16 +26,16 @@ ZTPDIR = C:\Zilog\ZDSII_eZ80Acclaim!_5.3.5\ZTP2.5.1
 ZTPDIR_ESCSPACE = C:\Zilog\ZDSII_eZ80Acclaim!_5.3.5\ZTP2.5.1
 
 # project directory
-PRJDIR = C:\Users\Allison\Desktop\UF\Year 4 Semester 1\Senior Design\Project\game-gear\Demo
-PRJDIR_ESCSPACE = C:\Users\Allison\Desktop\UF\Year\ 4\ Semester\ 1\Senior\ Design\Project\game-gear\Demo
+PRJDIR = C:\Users\barke\Documents\Computer Engineering Design\game-gear\z80 assembly\TestCode
+PRJDIR_ESCSPACE = C:\Users\barke\Documents\Computer\ Engineering\ Design\game-gear\z80\ assembly\TestCode
 
 # intermediate files directory
-WORKDIR = C:\Users\Allison\Desktop\UF\Year 4 Semester 1\Senior Design\Project\game-gear\Demo\Debug
-WORKDIR_ESCSPACE = C:\Users\Allison\Desktop\UF\Year\ 4\ Semester\ 1\Senior\ Design\Project\game-gear\Demo\Debug
+WORKDIR = C:\Users\barke\Documents\Computer Engineering Design\game-gear\z80 assembly\TestCode\Debug
+WORKDIR_ESCSPACE = C:\Users\barke\Documents\Computer\ Engineering\ Design\game-gear\z80\ assembly\TestCode\Debug
 
 # output files directory
-OUTDIR = C:\Users\Allison\Desktop\UF\Year 4 Semester 1\Senior Design\Project\game-gear\Demo\Debug\
-OUTDIR_ESCSPACE = C:\Users\Allison\Desktop\UF\Year\ 4\ Semester\ 1\Senior\ Design\Project\game-gear\Demo\Debug\
+OUTDIR = C:\Users\barke\Documents\Computer Engineering Design\game-gear\z80 assembly\TestCode\Debug\
+OUTDIR_ESCSPACE = C:\Users\barke\Documents\Computer\ Engineering\ Design\game-gear\z80\ assembly\TestCode\Debug\
 
 # tools
 CC = @"$(BIN)\eZ80cc"
