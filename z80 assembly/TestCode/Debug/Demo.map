@@ -4,7 +4,7 @@ Copyright (C) 1999-2008 Zilog, Inc. All Rights Reserved
 
 LINK MAP:
 
-DATE:      Mon Dec 02 10:36:54 2024
+DATE:      Tue Dec 10 15:41:15 2024
 PROCESSOR: assembler
 FILES:     .\sega_print.obj
 
@@ -57,7 +57,7 @@ define _SYS_CLK_SRC = 0
 define _OSC_FREQ_MULT = 1
 define __PLL_CTL0_INIT_PARAM = $00
 
-"C:\Users\Allison\Desktop\UF\Year 4 Semester 1\Senior Design\Project\game-gear\Demo\Debug\Demo"=  ".\sega_print.obj"
+"C:\Users\barke\Documents\Computer Engineering Design\game-gear\z80 assembly\TestCode\Debug\Demo"=  ".\sega_print.obj"
 
 
 SPACE ALLOCATION:
@@ -65,8 +65,8 @@ SPACE ALLOCATION:
 
 Space                     Base         Top      Size      Used    Unused
 ------------------ ----------- ----------- --------- --------- ---------
-ROM                   C:000000    C:00008C   100000H       8DH    FFF73H
-                                          (  1048576       141   1048435)
+ROM                   C:000000    C:0000C4   100000H       C5H    FFF3BH
+                                          (  1048576       197   1048379)
 
 
 SEGMENTS WITHIN SPACE:
@@ -74,16 +74,16 @@ SEGMENTS WITHIN SPACE:
 
 ROM                               Type        Base         Top      Size
 ------------------ ------------------- ----------- ----------- ---------
-$$$org0FD7489D     absolute data          C:000000    C:00008C       8dh
+$$$org0377489D     absolute data          C:000000    C:0000C4       c5h
 
 SEGMENTS WITHIN MODULES:
 ========================
 
-Module: C:\Users\Allison\Desktop\UF\Year 4 Semester 1\Senior Design\Project\game-gear\Demo\sega_print.asm (File: sega_print.obj) Version: 1:0 12/02/2024 10:36:54
+Module: C:\Users\barke\Documents\Computer Engineering Design\game-gear\z80 assembly\TestCode\sega_print.asm (File: sega_print.obj) Version: 1:0 12/10/2024 14:39:52
 
     Name                                           Base         Top      Size
     --------------------------------------- ----------- ----------- ---------
-    Segment: $$$org0FD7489D                    C:000000    C:00008C       8dh
+    Segment: $$$org0377489D                    C:000000    C:0000C4       c5h
 
 EXTERNAL DEFINITIONS:
 =====================
@@ -148,8 +148,8 @@ _SYS_CLK_SRC                      Defined     LINKER
 
 OUTPUT CHECKSUM
 ===============
-Demo.hex             003F79
-Demo.lod             003F79
+Demo.hex             004FBE
+Demo.lod             004FBE
 
 
 

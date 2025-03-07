@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "centerPCB")(type "KiCad")(uri "${KIPRJMOD}/centerPCB.kicad_sym")(options "")(descr ""))
+  (lib (name "GGMainPCB")(type "KiCad")(uri "${KIPRJMOD}/GGMainPCB.kicad_sym")(options "")(descr ""))
+)

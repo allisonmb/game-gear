@@ -110,7 +110,7 @@ Downloads=[SPINDir]\
 Overlays=[SPINDir]\
 
 [ROMs]
-48k=C:\Users\Allison\Desktop\UF\Year 4 Semester 1\Senior Design\Project\ZXSpin_07s\ROMs\48.rom
+48k=C:\Users\barke\Documents\Computer Engineering Design\game-gear\z80 assembly\ZXSpin_07s\ROMs\48.rom
 128k=128.rom
 Plus2=Plus2.rom
 Plus2a=Plus3.rom

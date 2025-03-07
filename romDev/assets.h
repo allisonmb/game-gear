@@ -52,3 +52,42 @@ extern const unsigned char	Nole_bin[];
 extern const unsigned char	Nole_psgcompr[];
 #define				Nole_psgcompr_size 372
 
+extern const unsigned char	Numbers_bin[];
+#define				Numbers_bin_size 22
+
+extern const unsigned char	Numbers_psgcompr[];
+#define				Numbers_psgcompr_size 668
+
+extern const unsigned char	Spritesheet_bin[];
+#define				Spritesheet_bin_size 32
+
+extern const unsigned char	Spritesheet_psgcompr[];
+#define				Spritesheet_psgcompr_size 1439
+
+extern const unsigned char	TestFailed__stmcompr[];
+#define				TestFailed__stmcompr_size 159
+
+extern const unsigned char	TestFailed_bin[];
+#define				TestFailed_bin_size 32
+
+extern const unsigned char	TestFailed_psgcompr[];
+#define				TestFailed_psgcompr_size 3378
+
+extern const unsigned char	Testing1_bin[];
+#define				Testing1_bin_size 32
+
+extern const unsigned char	Testing1_psgcompr[];
+#define				Testing1_psgcompr_size 952
+
+extern const unsigned char	Testing1_stmcompr[];
+#define				Testing1_stmcompr_size 86
+
+extern const unsigned char	TestingComplete_bin[];
+#define				TestingComplete_bin_size 6
+
+extern const unsigned char	TestingComplete_psgcompr[];
+#define				TestingComplete_psgcompr_size 391
+
+extern const unsigned char	TestingComplete_stmcompr[];
+#define				TestingComplete_stmcompr_size 54
+

@@ -44,6 +44,6 @@ define _SYS_CLK_SRC = 0
 define _OSC_FREQ_MULT = 1
 define __PLL_CTL0_INIT_PARAM = $00
 
-"C:\Users\Allison\Desktop\UF\Year 4 Semester 1\Senior Design\Project\game-gear\Demo\Debug\Demo"= \
+"C:\Users\barke\Documents\Computer Engineering Design\game-gear\z80 assembly\TestCode\Debug\Demo"= \
  ".\sega_print.obj"
 

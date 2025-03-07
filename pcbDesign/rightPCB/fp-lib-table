@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "BackupProjects_allisonbarfield_personal_2_20250219")(type "KiCad")(uri "$(KIPRJMOD)/BackupProjects_allisonbarfield_personal_2_20250219.pretty")(options "")(descr ""))
+  (lib (name "GGLib")(type "KiCad")(uri "${KIPRJMOD}/GGLib.pretty")(options "")(descr ""))
+)

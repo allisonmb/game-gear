@@ -168,7 +168,7 @@
       000092 21r00r00         [10]  162 	ld	hl, #_DemoBG_bin
       000095 CDr00r00         [17]  163 	call	_GG_loadBGPalette
                                     164 ;compileTest.c:42: SMS_loadPSGaidencompressedTiles(gator_psgcompr, GATOR_TILES);
-      000098 11 00 60         [10]  165 	ld	de, #0x6000
+      000098 11 40 5F         [10]  165 	ld	de, #0x5f40
       00009B 21r00r00         [10]  166 	ld	hl, #_gator_psgcompr
       00009E CDr00r00         [17]  167 	call	_SMS_loadPSGaidencompressedTilesatAddr
                                     168 ;compileTest.c:44: GG_loadSpritePalette(gator_bin);
@@ -261,7 +261,7 @@
       00012B B7               [ 4]  255 	or	a, a
       00012C C2r41r01         [10]  256 	jp	NZ, 00116$
                                     257 ;compileTest.c:65: SMS_loadPSGaidencompressedTiles(Nole_psgcompr, GATOR_TILES);
-      00012F 11 00 60         [10]  258 	ld	de, #0x6000
+      00012F 11 40 5F         [10]  258 	ld	de, #0x5f40
       000132 21r00r00         [10]  259 	ld	hl, #_Nole_psgcompr
       000135 CDr00r00         [17]  260 	call	_SMS_loadPSGaidencompressedTilesatAddr
                                     261 ;compileTest.c:66: GG_loadSpritePalette(Nole_bin);
@@ -270,7 +270,7 @@
       00013E C3r50r01         [10]  264 	jp	00117$
       000141                        265 00116$:
                                     266 ;compileTest.c:69: SMS_loadPSGaidencompressedTiles(gator_psgcompr, GATOR_TILES);
-      000141 11 00 60         [10]  267 	ld	de, #0x6000
+      000141 11 40 5F         [10]  267 	ld	de, #0x5f40
       000144 21r00r00         [10]  268 	ld	hl, #_gator_psgcompr
       000147 CDr00r00         [17]  269 	call	_SMS_loadPSGaidencompressedTilesatAddr
                                     270 ;compileTest.c:70: GG_loadSpritePalette(gator_bin);
@@ -339,105 +339,107 @@
       0001A6 26 00            [ 7]  333 	ld	h, #0x00
                                     334 ;	spillPairReg hl
                                     335 ;	spillPairReg hl
-      0001A8 5D               [ 4]  336 	ld	e, l
+      0001A8 7D               [ 4]  336 	ld	a, l
       0001A9 54               [ 4]  337 	ld	d, h
-      0001AA EB               [ 4]  338 	ex	de, hl
-      0001AB 29               [11]  339 	add	hl, hl
-      0001AC 29               [11]  340 	add	hl, hl
-      0001AD EB               [ 4]  341 	ex	de, hl
-      0001AE 7A               [ 4]  342 	ld	a, d
-      0001AF 3C               [ 4]  343 	inc	a
-      0001B0 57               [ 4]  344 	ld	d, a
-      0001B1 7B               [ 4]  345 	ld	a, e
-      0001B2 DD 86 FC         [19]  346 	add	a, -4 (ix)
-      0001B5 5F               [ 4]  347 	ld	e, a
-      0001B6 7A               [ 4]  348 	ld	a, d
-      0001B7 DD 8E FD         [19]  349 	adc	a, -3 (ix)
-      0001BA 57               [ 4]  350 	ld	d, a
-      0001BB 16 00            [ 7]  351 	ld	d, #0x00
-      0001BD 7B               [ 4]  352 	ld	a, e
-      0001BE B1               [ 4]  353 	or	a, c
-      0001BF 5F               [ 4]  354 	ld	e, a
-      0001C0 7A               [ 4]  355 	ld	a, d
-      0001C1 B0               [ 4]  356 	or	a, b
-      0001C2 57               [ 4]  357 	ld	d, a
-      0001C3 3Ar01r00         [13]  358 	ld	a, (_BallY+0)
-      0001C6 4F               [ 4]  359 	ld	c, a
-      0001C7 06 00            [ 7]  360 	ld	b, #0x00
-      0001C9 29               [11]  361 	add	hl, hl
-      0001CA 29               [11]  362 	add	hl, hl
-      0001CB 29               [11]  363 	add	hl, hl
-      0001CC 09               [11]  364 	add	hl, bc
-      0001CD CDr00r00         [17]  365 	call	_SMS_addSprite_f
-                                    366 ;compileTest.c:85: for (x = 0; x < 4; x++) {
-      0001D0 DD 34 FF         [23]  367 	inc	-1 (ix)
-      0001D3 DD 7E FF         [19]  368 	ld	a, -1 (ix)
-      0001D6 D6 04            [ 7]  369 	sub	a, #0x04
-      0001D8 DAr89r01         [10]  370 	jp	C, 00103$
-                                    371 ;compileTest.c:84: for (y = 0; y < 4; y++) {
-      0001DB DD 34 FE         [23]  372 	inc	-2 (ix)
-      0001DE DD 7E FE         [19]  373 	ld	a, -2 (ix)
-      0001E1 D6 04            [ 7]  374 	sub	a, #0x04
-      0001E3 DAr85r01         [10]  375 	jp	C, 00109$
-      0001E6                        376 00107$:
-                                    377 ;compileTest.c:89: }
-      0001E6 DD F9            [10]  378 	ld	sp, ix
-      0001E8 DD E1            [14]  379 	pop	ix
-      0001EA C9               [10]  380 	ret
-                                    381 	.area _CODE
-                                    382 	.area _INITIALIZER
-                                    383 	.area _CABS (ABS)
-      007FF0                        384 	.org 0x7FF0
-      007FF0                        385 ___SMS__SEGA_signature:
-      007FF0 54                     386 	.db #0x54	; 84	'T'
-      007FF1 4D                     387 	.db #0x4d	; 77	'M'
-      007FF2 52                     388 	.db #0x52	; 82	'R'
-      007FF3 20                     389 	.db #0x20	; 32
-      007FF4 53                     390 	.db #0x53	; 83	'S'
-      007FF5 45                     391 	.db #0x45	; 69	'E'
-      007FF6 47                     392 	.db #0x47	; 71	'G'
-      007FF7 41                     393 	.db #0x41	; 65	'A'
-      007FF8 FF                     394 	.db #0xff	; 255
-      007FF9 FF                     395 	.db #0xff	; 255
-      007FFA FF                     396 	.db #0xff	; 255
-      007FFB FF                     397 	.db #0xff	; 255
-      007FFC 99                     398 	.db #0x99	; 153
-      007FFD 99                     399 	.db #0x99	; 153
-      007FFE 00                     400 	.db #0x00	; 0
-      007FFF 7C                     401 	.db #0x7c	; 124
-      007FD1                        402 	.org 0x7FD1
-      007FD1                        403 ___SMS__SDSC_author:
-      007FD1 42 72 61 6E 64 6F 6E   404 	.ascii "Brandon Barker"
+      0001AA 87               [ 4]  338 	add	a, a
+      0001AB CB 12            [ 8]  339 	rl	d
+      0001AD 87               [ 4]  340 	add	a, a
+      0001AE CB 12            [ 8]  341 	rl	d
+      0001B0 C6 FA            [ 7]  342 	add	a, #0xfa
+      0001B2 5F               [ 4]  343 	ld	e, a
+      0001B3 D2rB7r01         [10]  344 	jp	NC, 00133$
+      0001B6 14               [ 4]  345 	inc	d
+      0001B7                        346 00133$:
+      0001B7 7B               [ 4]  347 	ld	a, e
+      0001B8 DD 86 FC         [19]  348 	add	a, -4 (ix)
+      0001BB 5F               [ 4]  349 	ld	e, a
+      0001BC 7A               [ 4]  350 	ld	a, d
+      0001BD DD 8E FD         [19]  351 	adc	a, -3 (ix)
+      0001C0 57               [ 4]  352 	ld	d, a
+      0001C1 16 00            [ 7]  353 	ld	d, #0x00
+      0001C3 7B               [ 4]  354 	ld	a, e
+      0001C4 B1               [ 4]  355 	or	a, c
+      0001C5 5F               [ 4]  356 	ld	e, a
+      0001C6 7A               [ 4]  357 	ld	a, d
+      0001C7 B0               [ 4]  358 	or	a, b
+      0001C8 57               [ 4]  359 	ld	d, a
+      0001C9 3Ar01r00         [13]  360 	ld	a, (_BallY+0)
+      0001CC 4F               [ 4]  361 	ld	c, a
+      0001CD 06 00            [ 7]  362 	ld	b, #0x00
+      0001CF 29               [11]  363 	add	hl, hl
+      0001D0 29               [11]  364 	add	hl, hl
+      0001D1 29               [11]  365 	add	hl, hl
+      0001D2 09               [11]  366 	add	hl, bc
+      0001D3 CDr00r00         [17]  367 	call	_SMS_addSprite_f
+                                    368 ;compileTest.c:85: for (x = 0; x < 4; x++) {
+      0001D6 DD 34 FF         [23]  369 	inc	-1 (ix)
+      0001D9 DD 7E FF         [19]  370 	ld	a, -1 (ix)
+      0001DC D6 04            [ 7]  371 	sub	a, #0x04
+      0001DE DAr89r01         [10]  372 	jp	C, 00103$
+                                    373 ;compileTest.c:84: for (y = 0; y < 4; y++) {
+      0001E1 DD 34 FE         [23]  374 	inc	-2 (ix)
+      0001E4 DD 7E FE         [19]  375 	ld	a, -2 (ix)
+      0001E7 D6 04            [ 7]  376 	sub	a, #0x04
+      0001E9 DAr85r01         [10]  377 	jp	C, 00109$
+      0001EC                        378 00107$:
+                                    379 ;compileTest.c:89: }
+      0001EC DD F9            [10]  380 	ld	sp, ix
+      0001EE DD E1            [14]  381 	pop	ix
+      0001F0 C9               [10]  382 	ret
+                                    383 	.area _CODE
+                                    384 	.area _INITIALIZER
+                                    385 	.area _CABS (ABS)
+      007FF0                        386 	.org 0x7FF0
+      007FF0                        387 ___SMS__SEGA_signature:
+      007FF0 54                     388 	.db #0x54	; 84	'T'
+      007FF1 4D                     389 	.db #0x4d	; 77	'M'
+      007FF2 52                     390 	.db #0x52	; 82	'R'
+      007FF3 20                     391 	.db #0x20	; 32
+      007FF4 53                     392 	.db #0x53	; 83	'S'
+      007FF5 45                     393 	.db #0x45	; 69	'E'
+      007FF6 47                     394 	.db #0x47	; 71	'G'
+      007FF7 41                     395 	.db #0x41	; 65	'A'
+      007FF8 FF                     396 	.db #0xff	; 255
+      007FF9 FF                     397 	.db #0xff	; 255
+      007FFA FF                     398 	.db #0xff	; 255
+      007FFB FF                     399 	.db #0xff	; 255
+      007FFC 99                     400 	.db #0x99	; 153
+      007FFD 99                     401 	.db #0x99	; 153
+      007FFE 00                     402 	.db #0x00	; 0
+      007FFF 7C                     403 	.db #0x7c	; 124
+      007FD1                        404 	.org 0x7FD1
+      007FD1                        405 ___SMS__SDSC_author:
+      007FD1 42 72 61 6E 64 6F 6E   406 	.ascii "Brandon Barker"
              20 42 61 72 6B 65 72
-      007FDF 00                     405 	.db 0x00
-      007FC5                        406 	.org 0x7FC5
-      007FC5                        407 ___SMS__SDSC_name:
-      007FC5 44 65 6D 6F 20 53 63   408 	.ascii "Demo Screen"
+      007FDF 00                     407 	.db 0x00
+      007FC5                        408 	.org 0x7FC5
+      007FC5                        409 ___SMS__SDSC_name:
+      007FC5 44 65 6D 6F 20 53 63   410 	.ascii "Demo Screen"
              72 65 65 6E
-      007FD0 00                     409 	.db 0x00
-      007FA5                        410 	.org 0x7FA5
-      007FA5                        411 ___SMS__SDSC_descr:
-      007FA5 53 68 6F 75 6C 64 20   412 	.ascii "Should display something simple"
+      007FD0 00                     411 	.db 0x00
+      007FA5                        412 	.org 0x7FA5
+      007FA5                        413 ___SMS__SDSC_descr:
+      007FA5 53 68 6F 75 6C 64 20   414 	.ascii "Should display something simple"
              64 69 73 70 6C 61 79
              20 73 6F 6D 65 74 68
              69 6E 67 20 73 69 6D
              70 6C 65
-      007FC4 00                     413 	.db 0x00
-      007FE0                        414 	.org 0x7FE0
-      007FE0                        415 ___SMS__SDSC_signature:
-      007FE0 53                     416 	.db #0x53	; 83	'S'
-      007FE1 44                     417 	.db #0x44	; 68	'D'
-      007FE2 53                     418 	.db #0x53	; 83	'S'
-      007FE3 43                     419 	.db #0x43	; 67	'C'
-      007FE4 01                     420 	.db #0x01	; 1
-      007FE5 00                     421 	.db #0x00	; 0
-      007FE6 26                     422 	.db #0x26	; 38
-      007FE7 11                     423 	.db #0x11	; 17
-      007FE8 24                     424 	.db #0x24	; 36
-      007FE9 20                     425 	.db #0x20	; 32
-      007FEA D1                     426 	.db #0xd1	; 209
-      007FEB 7F                     427 	.db #0x7f	; 127
-      007FEC C5                     428 	.db #0xc5	; 197
-      007FED 7F                     429 	.db #0x7f	; 127
-      007FEE A5                     430 	.db #0xa5	; 165
-      007FEF 7F                     431 	.db #0x7f	; 127
+      007FC4 00                     415 	.db 0x00
+      007FE0                        416 	.org 0x7FE0
+      007FE0                        417 ___SMS__SDSC_signature:
+      007FE0 53                     418 	.db #0x53	; 83	'S'
+      007FE1 44                     419 	.db #0x44	; 68	'D'
+      007FE2 53                     420 	.db #0x53	; 83	'S'
+      007FE3 43                     421 	.db #0x43	; 67	'C'
+      007FE4 01                     422 	.db #0x01	; 1
+      007FE5 00                     423 	.db #0x00	; 0
+      007FE6 26                     424 	.db #0x26	; 38
+      007FE7 11                     425 	.db #0x11	; 17
+      007FE8 24                     426 	.db #0x24	; 36
+      007FE9 20                     427 	.db #0x20	; 32
+      007FEA D1                     428 	.db #0xd1	; 209
+      007FEB 7F                     429 	.db #0x7f	; 127
+      007FEC C5                     430 	.db #0xc5	; 197
+      007FED 7F                     431 	.db #0x7f	; 127
+      007FEE A5                     432 	.db #0xa5	; 165
+      007FEF 7F                     433 	.db #0x7f	; 127
