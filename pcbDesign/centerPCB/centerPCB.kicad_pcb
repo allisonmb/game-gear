@@ -3436,6 +3436,18 @@
 		(layer "Edge.Cuts")
 		(uuid "e556b153-59f6-4cb1-aa00-2e9b29186c8e")
 	)
+	(gr_text "Brandon Barker\nAllison Barfield\nCarson Sobolewski\nSeenior Design\nFall 2024 - Spring 2025\nGo Gators!"
+		(at 191.5 102.5 0)
+		(layer "F.SilkS")
+		(uuid "0a420834-b751-45c4-8b2f-e45aa8954c49")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
 	(segment
 		(start 111.6458 70.054)
 		(end 111.6458 70.3419)
