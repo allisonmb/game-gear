@@ -1,32 +1,57 @@
+
 # PiJuice Battery Setup
-1. Install lite version of pijuice software:
-	a. cmd: sudo apt-get install pijuice-base
-2. run pijuice_cli
-3. Choose Battery Profile
-	a. navigate to 'Battery Profiles'
-	b. Select 'PjZero_1200'  
-4. Configure power switch
-	a. navigate to 'Buttons'
-	b. select 'SW2'
-	c. select 'Press'
-	d. select 'HARD_FUNC_POWER_ON'
-	e. go to 'Release;
-	f. select 'HARD_FUNC_POWER_OFF'
-5. Configure LED script
-	a. enable pijuice.service
-	    i. cmd: sudo systemctl enable pijuice.service
-	    ii. cmd: sudo systemctl start pijuice.service
-	    iii. verify system status with cmd: sudo systemctl status pijuice.service
-	b. ensure 'lowPowerLED.py' has correct ownership and permissions
-		i. cmd: chmod +x /home/pi/lowPowerLED.py
-		ii. cmd: 777 /home/pi/lowPowerLED.py
-		iii. cmd: sudo chown pi:pi /home/pi/lowPowerLED.py
-	c. run pijuice_cli and navigate to 'System Events'
-	d. enable 'System Start' event and select 'USER_FUNC1'
-	e. navigate to 'User Scripts'
-	f. set 'USER_FUNC1' to /home/pi/lowPowerLED.py
-6. Configure Low Power Shutdown
-	a. navigate to 'System Tasks'
-	b. enable 'Min Charge' and set threshold to 10%
-	c. navigate to 'System Events'
-	d. enable 'Low Charge' and set function to 'SYS_FUNC_HALT_POW_OFF' 
+
+## 1. Install Lite Version of PiJuice Software
+```bash
+sudo apt-get install pijuice-base
+```
+
+## 2. Run PiJuice CLI
+```bash
+pijuice_cli
+```
+
+## 3. Choose Battery Profile
+- Navigate to `Battery Profiles`
+- Select: **PjZero_1200**
+
+## 4. Configure Power Switch
+- Navigate to `Buttons`
+- Select `SW2`
+  - Under **Press**, select: `HARD_FUNC_POWER_ON`
+  - Under **Release**, select: `HARD_FUNC_POWER_OFF`
+
+## 5. Configure LED Script
+
+### a. Enable `pijuice.service`
+```bash
+sudo systemctl enable pijuice.service
+sudo systemctl start pijuice.service
+sudo systemctl status pijuice.service
+```
+
+### b. Ensure `lowPowerLED.py` Has Correct Ownership and Permissions
+```bash
+chmod +x /home/pi/lowPowerLED.py
+chmod 777 /home/pi/lowPowerLED.py
+sudo chown pi:pi /home/pi/lowPowerLED.py
+```
+
+### c. Set Script to Run on Boot
+- Run `pijuice_cli`
+- Navigate to `System Events`
+  - Enable **System Start**
+  - Set function to: `USER_FUNC1`
+- Navigate to `User Scripts`
+  - Set `USER_FUNC1` to:
+    ```
+    /home/pi/lowPowerLED.py
+    ```
+
+## 6. Configure Low Power Shutdown
+
+- Navigate to `System Tasks`
+  - Enable **Min Charge** and set threshold to **10%**
+- Navigate to `System Events`
+  - Enable **Low Charge**
+  - Set function to: `SYS_FUNC_HALT_POW_OFF`
