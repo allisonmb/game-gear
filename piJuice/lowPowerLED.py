@@ -19,23 +19,23 @@ GPIO.setup(power_led, GPIO.OUT)
 GPIO.output(power_led, 0)
 
 
-# pijuice = PiJuice(1, 0x14) # Instantiate PiJuice interface object
-# print('CONNECTING....')
-# while pijuice.status.GetStatus().get('error') == 'COMMUNICATION_ERROR': pass
+pijuice = PiJuice(1, 0x14) # Instantiate PiJuice interface object
+print('CONNECTING....')
+while pijuice.status.GetStatus().get('error') == 'COMMUNICATION_ERROR': pass
 print('SUCCESS') # Read PiJuice status.
 
-#pijuice.status.SetIoDigitalOutput(1, 1)            
+pijuice.status.SetIoDigitalOutput(1, 1)            
 def led_ctrl():
     LED = 1
     
     while True:
-        # if pijuice.status.GetChargeLevel().get('data') <= low_charge_thresh:
-            # LED = 1 - LED
-        # else:
-            # LED = 1
-        # pijuice.status.SetIoDigitalOutput(1, LED)
-        # pijuice.status.SetLedState('D2', [LED * 50, 0, 0])
-        LED = 1 - LED
+        if pijuice.status.GetChargeLevel().get('data') <= low_charge_thresh:
+            LED = 1 - LED
+        else:
+            LED = 1
+        pijuice.status.SetIoDigitalOutput(1, LED)
+        pijuice.status.SetLedState('D2', [LED * 50, 0, 0])
+        # LED = 1 - LED
         GPIO.output(power_led, LED)
 
 
