@@ -1,6 +1,8 @@
 
 # PiJuice Battery Setup
 
+## Note - Ensure pijuice board is connected to the pi for the entire setup. The battery itself does NOT need to be connected to the pijuice
+
 ## 1. Install Lite Version of PiJuice Software
 ```bash
 sudo apt-get install pijuice-base
